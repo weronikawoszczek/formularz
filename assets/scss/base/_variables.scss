@@ -1,0 +1,34 @@
+$main: 				#E2743E;
+$main--light: 		#fefefe;
+$main--dark: 		#000;
+
+$aux: 				#d8d8d8;
+$aux-darker:		darken($aux, 30%);
+$aux-dark: 			darken($aux, 60%);
+$text: 				#000000;
+//$accent:			#45B367;
+
+$font--main:		'Roboto', Helvetica, Arial, sans-serif;
+
+
+$baseSize: 			16; 
+$whitespace:		30px;
+
+// Mixins
+@mixin makeRem($fontInPx) {
+	font-size: ($fontInPx / $baseSize)+rem;
+}
+@mixin animate{
+	transition: .2s ease-in;
+}
+
+// Extends
+%absCenter {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+}
+

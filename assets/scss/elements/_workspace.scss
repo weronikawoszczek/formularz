@@ -1,0 +1,120 @@
+.workspace{
+  height: 100vh;
+  padding: 0;
+  display: flex;
+  @include media-breakpoint-down(sm) {
+    flex-direction: column;
+    height: auto;
+  }
+  &__block {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+    }
+  }
+  &__header{
+    background-color: $main--light;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    @include media-breakpoint-down(sm) {
+      height: 170px;
+      justify-content: center;
+    }
+    span{
+      margin: 15px 0 30px;
+    }
+  }
+  &__main{
+    background: url(/dist/assets/img/main.png) no-repeat center center;
+    background-size: cover;
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+  }
+  &__slider-wrapper{
+    background-color: $main;
+    position: relative;
+    overflow: hidden;
+    @include media-breakpoint-down(sm) {
+      height: 400px;
+    }
+  }
+  &__social-box{
+    display: none;
+    height: 100%;
+    position: relative;
+    &.active{
+      display: block
+    }
+    .social-el{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .social-media{
+    position: absolute;
+    top: 100px;
+    right: -30px;
+    list-style-type: none;
+    z-index: 200;
+    li{
+      color: #fff;
+      height: 50px;
+      cursor: pointer;
+      will-change: transform;
+      transition: transform .4s ease-out;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+      &.active{
+        transform: translate(-60%, 0);
+      }
+      &:hover{
+        transform: translate(-60%, 0);
+      }
+    }
+  }
+  .description{
+    padding: 30px;
+    line-height: 2;
+    flex-direction: column;
+  }
+  &__container{
+    display: flex;
+    @include media-breakpoint-down(sm) {
+      align-items: center;
+    }
+  }
+
+  .slick-arrow{
+    position: absolute;
+    z-index: 250;
+    bottom: 25px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 0;
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+    &:hover{
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+    &.slick-prev {
+      right: 80px;
+    }
+    &.slick-next {
+      right: 40px;
+    }
+  }
+
+  .slick-list, .slick-track, .slick-slide>div{
+    height: 100%;
+  }
+}
+
+
