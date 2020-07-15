@@ -1,45 +1,157 @@
 app.common = {
     mainInit: () => {
         let text = 'ES6 is working';
-        console.log(text)
 
-        $('.smaller-block').hover(function () {
-            $('.smaller-block, .bigger-block').addClass('opposite');
+        $('.quest-initial #akt').click(function () {
+            $('.if-1').slideDown();
+        });
+        $('.quest-initial #poswiadczenie').click(function () {
+            $('.if-1').slideUp();
+        });
+        $('.quest-initial #inne').click(function () {
+            $('.if-1').slideUp();
         });
 
-        $('.bigger-block').hover(function () {
-            $('.smaller-block, .bigger-block').removeClass('opposite');
+
+        $("#select-type").change(function () {
+            var iscaller = $(this).val();
+
+            if (iscaller == "yes") {
+                $('.other').slideUp();
+                $('.if-2').slideDown();
+            }
+            else if (iscaller == "other") {
+                $('.if-2').slideUp();
+                $('.other').slideDown().css('display','flex');
+            }
+            else {
+                $('.if-2').slideUp();
+                $('.other').slideUp();
+            }
+
+            var selected = $(this).find(':selected');
+            var price = selected.data('price');
+            if (price == "yes") {
+                $('.if-4').slideUp();
+                $('.if-3').slideDown().css('display', 'flex');
+            }
+            else if (price == "value") {
+                $('.if-3').slideUp();
+                $('.if-4').slideDown();
+            }
+            else {
+                $('.if-3').slideUp();
+                $('.if-4').slideUp();
+            }
+
+            var credit = selected.data('credit');
+            if (credit == "yes") {
+                $('.if-5').slideDown().css('display', 'flex');
+            }
+            else {
+                $('.if-5').slideUp();
+            }
+
+            var duty = selected.data('duty');
+            if (duty == "yes") {
+                $('.if-6').slideDown().css('display', 'flex');
+            }
+            else {
+                $('.if-6').slideUp();
+            }
+
+            var tax = selected.data('tax');
+            if (tax == "yes") {
+                $('.if-7').slideDown().css('display', 'flex');
+            }
+            else {
+                $('.if-7').slideUp();
+            }
+
+            var othertax = selected.data('othertax');
+            if (othertax == "yes") {
+                $('.if-8').slideDown().css('display', 'flex');
+            }
+            else {
+                $('.if-8').slideUp();
+            }
+
+            var charge = selected.data('charge');
+            if (charge == "yes") {
+                $('.if-9').slideDown().css('display', 'flex');
+            }
+            else {
+                $('.if-9').slideUp();
+            }
         });
 
-        $('.social-media li').click(function () {
-            $('.social-media-el').removeClass('active');
-            $(this).addClass('active');
-
-            let index = $(this).data("id");
-            $('.workspace__social-box').removeClass('active');
-            $('.workspace__social-box[data-id="' + index + '"]').addClass('active');
+        $("#selectobject").change(function () {
+            var isotherobject = $(this).val();
+            if (isotherobject == "otherobject") {
+                $('.other-object').slideDown().css('display','flex');
+            }
+            else {
+                $('.other-object').slideUp();
+            }
         });
 
-        $('.hamburger-icon, .cross-icon').click(function () {
-            $('.cross-icon, .hamburger-icon, .menu').toggleClass('active');
-            $(this).removeClass('active');
+        $("#cenanieznana").change(function () {
+            if(this.checked) {
+                $("#cena").prop('disabled', true).val("");
+                $("#cena.changeinput").addClass('grayed');
+                $(".cena.changelabel").addClass('grayed');
+            }
+            else {
+                $("#cena").prop('disabled', false);
+                $("#cena.changeinput").removeClass('grayed');
+                $(".cena.changelabel").removeClass('grayed');
+            }
         });
 
-        $('.workspace__slider').slick({
-            infinite: true,
-            autoplaySpeed: 2000,
-            autoplay: true,
+        $("#wartoscnieznana").change(function () {
+            if(this.checked) {
+                $("#wartosc").prop('disabled', true).val("");
+                $("#wartosc.changeinput").addClass('grayed');
+                $(".wartosc.changelabel").addClass('grayed');
+            }
+            else {
+                $("#wartosc").prop('disabled', false);
+                $("#wartosc.changeinput").removeClass('grayed');
+                $(".wartosc.changelabel").removeClass('grayed');
+            }
         });
 
-        $('.slick-prev').html('<img src="dist/assets/img/prev.png" />');
-        $('.slick-next').html('<img src="dist/assets/img/next.png" />');
+        $('#przelew').click(function () {
+            $('.account').slideDown().css('display', 'flex');
+        });
+        $('#gotowka').click(function () {
+            $('.account').slideUp();
+        });
 
+        $('#inny').click(function () {
+            $('.date').slideDown().css('display', 'flex');
+        });
+        $('#tensam').click(function () {
+            $('.date').slideUp();
+        });
+
+        $("#sposobnieznany").change(function () {
+            if(this.checked) {
+                $("#sposob").prop('disabled', true).val("");
+                $("#sposob.changeinput").addClass('grayed');
+                $(".sposob.changelabel").addClass('grayed');
+            }
+            else {
+                $("#wartosc").prop('disabled', false);
+                $("#sposob.changeinput").removeClass('grayed');
+                $(".sposob.changelabel").removeClass('grayed');
+            }
+        });
     }
 }
 
 $(function () {
     $(document).ready(() => {
         app.common.mainInit();
-
     })
 });

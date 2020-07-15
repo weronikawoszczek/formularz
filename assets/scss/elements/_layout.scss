@@ -1,127 +1,345 @@
 body {
-    font-size: $baseSize+px;
-    font-family: $font--main;
-    color: $text;
-    line-height: 140%;
-    &.js-blockScrolling {
-        height: 100vh;
-        overflow: hidden;
-    }
+  font-size: $baseSize+px;
+  font-family: $font-secondary;
+  color: $text;
+  line-height: 140%;
+  background: url(../img/bgbg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-.page-limiter{
-    display: flex;
-    max-width: 100vw;
-    overflow: hidden;
-    @include media-breakpoint-down(md) {
-        flex-direction: column;
-    }
+.page-limiter {
+  display: flex;
+  max-width: 100vw;
+  flex-direction: column;
+  align-items: center;
 }
 
 // responsive images
 img {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
-// links 
+
+// links
 a {
-    color: $aux-darker;
-    text-decoration: none;
-    @include makeRem(15);
+  color: $aux-darker;
+  text-decoration: none;
+  @include makeRem(15);
+  @include animate;
+
+  &:hover, &:focus, &:active {
+    color: $main--light;
     @include animate;
-    &:hover, &:focus, &:active {
-        color: $main--light;
-        @include animate;
-        text-decoration: none;
-    }
+    text-decoration: none;
+  }
 }
+
 // whitespace
 .clearspace {
-    clear: both;
-    &LG {
-        height: $whitespace*2;
-    }
-    &SM {
-        height: $whitespace;
-    }
+  clear: both;
+
+  &LG {
+    height: $whitespace*2;
+  }
+
+  &SM {
+    height: $whitespace;
+  }
 }
 
 //text alignements
-$alignments : left, center, right;
+$alignments: left, center, right;
 @each $align in $alignments {
-    .text--#{$align} {
-        text-align: $align;
-    }
+  .text--#{$align} {
+    text-align: $align;
+  }
 }
 
 // headings
 @for $i from 1 through 6 {
-    h#{$i} {
-        margin: 0;padding: 0;
-    }
+  h#{$i} {
+    margin: 0;
+    padding: 0;
+  }
 }
 
-h1{
-    @include makeRem(70);
-}
-span{
-    @include makeRem(17);
-}
-p{
-    @include makeRem(12);
+h1 {
+  @include makeRem(70);
 }
 
-//elements height
-.bigger-block{
-    height: 60%;
-    will-change: height;
-    transition: height .6s;
-    &.opposite{
-        @include media-breakpoint-up(sm) {
-            height: 40%;
-        }
-    }
-}
-.smaller-block{
-    height: 40%;
-    will-change: height;
-    transition: height .6s;
-    &.opposite{
-        @include media-breakpoint-up(sm) {
-            height: 60%;
-            .small-block {
-                p {
-                    transition: font-size .6s ease-in-out;
-                    font-size: .9rem;
-                }
-            }
-        }
-    }
-}
-.small-block{
-    width: 50%;
-    height: 100%;
-    @include media-breakpoint-up(sm) {
-
-    }
-}
-.block-padding{
-    padding-left: 50px;
+h3 {
+  @include makeRem(60);
 }
 
-//colors
-.dark{
-    background-color: $main--dark;
-    color: $main--light;
-}
-.light{
-    background-color: $main--light;
-    color: $main--dark;
+span {
+  @include makeRem(17);
 }
 
-//specific
-.center{
-    display: flex;
+p {
+  @include makeRem(12);
+}
+
+h3 {
+  margin: 10px 0 35px;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  color: #195C50;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+form {
+  background-color: white;
+  margin: 30px 0;
+  padding: 30px 20px;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 5px 5px 40px -15px #000000;
+}
+
+.question {
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+  width: $desktop-width;
+  flex-wrap: wrap;
+
+  &.space-between {
+    justify-content: space-between;
+  }
+
+  &.center {
     justify-content: center;
+  }
+
+  &.column {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 0;
+
+    .label-span {
+      margin-bottom: 5px;
+      width: $desktop-width;
+    }
+  }
+
+  input {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+
+  label {
+    margin: 0;
+    cursor: pointer;
+    border: 1px solid $main;
+    background-color: $main--light;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    padding: 5px 12px;
+    min-width: 105px;
+    text-align: center;
+    color: $main;
+    font-weight: bold;
+    font-family: $font-main;
+    box-shadow: 5px 5px 40px -15px #000000;
+
+    &.small {
+      padding: 3px 6px;
+      min-width: 95px;
+      font-size: 12px;
+      margin-right: 10px;
+    }
+
+    &.smaller {
+      padding: 3px 5px;
+      min-width: 70px;
+      font-size: 12px;
+      margin-right: 10px;
+    }
+  }
+
+  input:checked + label {
+    background-image: linear-gradient(to bottom right, #ffffff, $aux);
+    border-color: $aux-darker;
+    color: $aux-dark;
+  }
+
+  label:hover {
+    background-color: #ffffff;
+    color: $aux !important;
+    border-color: $aux-darker;
+  }
+}
+
+.label-span {
+  color: $main;
+  font-size: 14px;
+  margin: 0 10px 0 0;
+  width: 110px;
+  text-align: left;
+
+  &.big{
+    width: $desktop-width;
+  }
+}
+
+.form-input {
+  display: flex;
+  width: 400px;
+  flex-direction: column;
+  margin-bottom: 15px;
+
+  &.nomargin {
+    margin: 0;
+  }
+
+  &.changeform{
+    margin-bottom: 5px;
+  }
+
+  &.row {
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 400px;
     align-items: center;
+    margin: 0 0 20px 0;
+  }
+
+  &.form-list{
+    margin-bottom: 20px;
+  }
+
+  label {
+    color: $main;
+    font-size: 14px;
+    margin-bottom: 5px;
+
+    &.nomargin {
+      margin: 0;
+    }
+  }
+
+  .changelabel {
+    &.grayed {
+      color: $main--light-darker;
+    }
+  }
+
+  input {
+    border: none;
+    border-bottom: 1px solid $main;
+    background-color: $main--light;
+    width: $desktop-width;
+    height: 36px;
+    padding: 8px;
+    font-size: 16px;
+    color: $main--dark
+  }
+
+  textarea {
+    border: none;
+    border-bottom: 1px solid $main;
+    background-color: $main--light;
+    width: $desktop-width;
+    padding: 8px;
+    font-size: 16px;
+    color: $main--dark;
+    resize: none;
+  }
+
+  .checkbox-input {
+    width: 20px;
+    margin: 0 10px 0 0;
+  }
+
+  .date-input{
+    width: 200px;
+  }
+
+  .changeinput {
+    &.grayed {
+      border-bottom: 1px solid $main--light-darker;
+    }
+  }
+}
+
+.if-1, .other, .if-2, .other-object, .if-3, .if-4, .account, .date, .if-5, .if-6, .if-7, .if-8, .if-9 {
+  display: none;
+}
+
+.bootstrap-select.form-control:not([class*=col-]) {
+  position: relative;
+  width: $desktop-width;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  box-shadow: none;
+
+  span {
+    font-size: 15px;
+  }
+}
+
+.dropdown-menu {
+  position: absolute;
+  left: -10px;
+  right: 0;
+  top: -4px;
+  width: 104%;
+  z-index: 200 !important;
+  padding: 0;
+
+  li {
+    height: 40px;
+    border-bottom: 1px solid $main--light-darker;
+
+    &:first-of-type {
+      display: none;
+    }
+  }
+
+  a {
+    width: 100%;
+    height: 100%;
+    display: flex !important;
+    align-items: center;
+  }
+
+  span {
+    font-size: 15px;
+  }
+}
+
+.account {
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    -moz-appearance: textfield;
+  }
+}
+
+.list {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+
+  span{
+    font-size: 14px;
+    color: $main;
+  }
+
+  input {
+    width: 95%;
+    background-color: transparent;
+    font-size: 14px;
+  }
 }
