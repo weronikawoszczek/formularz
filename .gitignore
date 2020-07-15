@@ -1,6 +1,6 @@
 .DS_Store
-*.html
 !/src/*.html
 .idea/
 package-lock.json
 yarn.lock
+node_modules/
