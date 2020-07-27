@@ -93,6 +93,14 @@ app.common = {
             else {
                 $('.other-object').slideUp();
             }
+
+            var ukur = selected.data('ukur');
+            if (ukur == "yes") {
+                $('.ukur').slideDown().css('display', 'flex');
+            }
+            else {
+                $('.ukur').slideUp();
+            }
         });
 
         $("#cenanieznana").change(function () {
@@ -121,18 +129,34 @@ app.common = {
             }
         });
 
+        $('.add-next').click(function () {
+            $(this).slideUp();
+            var nextDiv = $(this).data('next');
+            console.log(nextDiv);
+            $('#' + nextDiv).slideDown().css('display', 'flex');
+        });
+
+        $('.add-next-final').click(function () {
+            $(this).slideUp();
+            $('.next-final').slideDown().css('display', 'flex');
+        });
+
         $('#przelew').click(function () {
             $('.account').slideDown().css('display', 'flex');
         });
+
         $('#gotowka').click(function () {
             $('.account').slideUp();
         });
 
-        $('#inny').click(function () {
-            $('.date').slideDown().css('display', 'flex');
+
+        $('.inny').click(function () {
+            var dateDiv = $(this).data('date');
+            $('#' + dateDiv).slideDown().css('display', 'flex');
         });
-        $('#tensam').click(function () {
-            $('.date').slideUp();
+        $('.tensam').click(function () {
+            var dateDiv = $(this).data('date');
+            $('#' + dateDiv).slideUp();
         });
 
         $("#sposobnieznany").change(function () {

@@ -1,27 +1,20 @@
 .btn-class {
-    display: inline-block;
     text-align: center;
     white-space: nowrap;
     vertical-align: middle;
     user-select: none;
-    border: 2px solid transparent;
-    padding: 1rem 2rem;
+    border: 1px solid $aux-darker;
+    padding: .7rem 1.5rem;
     @include makeRem(15);
-    line-height: 1.5;
-    background-color: $main;
-    color: $main--dark;
+    border-radius: 5px;
+    background-color: #fff;
+    color: $aux-darker;
     transition: background-color 0.2s;
     cursor: pointer;
+    margin: 10px 0 5px;
+    font-size: 13px;
     &:hover, &:focus, &:active {
-        color: $main--dark;
-    }
-    &--main {
-        background-color: $main;
-        color: #fff;
-        &:hover, &:focus, &:active {
-            color: #fff;
-            background-color: darken($main, 10%);
-        }
+        background-color: $aux-light;
     }
     @include media-breakpoint-down(sm) {
         width: 100%;

@@ -270,7 +270,21 @@ form {
   }
 }
 
-.if-1, .other, .if-2, .other-object, .if-3, .if-4, .account, .date, .if-5, .if-6, .if-7, .if-8, .if-9 {
+.nextDiv{
+  .label-span{
+    font-weight: bold;
+    color: $aux;
+  }
+}
+.date {
+  margin: 10px 0 0 !important;
+
+  input {
+    visibility: visible;
+  }
+}
+
+.if-1, .other, .if-2, .other-object, .if-3, .if-4, .account, .date, .if-5, .if-6, .ukur, .if-7, .if-8, .if-9, .nextDiv {
   display: none;
 }
 
