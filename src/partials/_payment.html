@@ -1,0 +1,24 @@
+<div class="question if-3">
+    <span class="label-span">Płatność przelewem (w tym częściowa):</span>
+    <input type="radio" id="przelew" name="platnosc" value="przelew">
+    <label class="small" for="przelew">Tak</label>
+    <input type="radio" id="gotowka" name="platnosc" value="gotowka">
+    <label class="small" for="gotowka">Nie</label>
+</div>
+
+<div class="form-input account">
+    <label for="numer">Numer konta</label>
+    <input type="number" id="numer" name="numer" min="0">
+</div>
+
+<partial src="_paymentDate.html"></partial>
+
+<div class="question if-5">
+    <span class="label-span">Kredyt</span>
+    <input type="radio" id="tak" name="kredyt" value="tak">
+    <label class="smaller" for="tak">Tak</label>
+    <input type="radio" id="nie" name="kredyt" value="nie">
+    <label class="smaller" for="nie">Nie</label>
+    <input type="radio" id="niewiadomo" name="kredyt" value="niewiadomo">
+    <label class="small" for="niewiadomo">Nie wiadomo</label>
+</div>

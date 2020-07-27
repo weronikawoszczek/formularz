@@ -4,9 +4,24 @@ app.common = {
 
         $('.quest-initial #akt').click(function () {
             $('.if-1').slideDown();
+            $('.documents').slideUp();
         });
         $('.quest-initial #poswiadczenie').click(function () {
+            $('.documents').slideDown();
             $('.if-1').slideUp();
+            $('.if-2').slideUp();
+            $('.other-object').slideUp();
+            $('.if-6').slideUp();
+            $('.if-3').slideUp();
+            $('.account').slideUp();
+            $('.if-4').slideUp();
+            $('.if-5').slideUp();
+            $('.ukur').slideUp();
+            $('.if-7').slideUp();
+            $('.if-8').slideUp();
+            $('.if-9').slideUp();
+            $('.other-doc').slideUp();
+            $('.comments').slideUp();
         });
         $('.quest-initial #inne').click(function () {
             $('.if-1').slideUp();

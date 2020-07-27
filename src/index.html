@@ -12,7 +12,7 @@
             <input type="radio" id="poswiadczenie" name="zadanie" value="poświadczenie">
             <label for="poswiadczenie">Poświadczenia</label><br>
             <input type="radio" id="inne" name="zadanie" value="inne"></a>
-            <a href="/documents.html"><label for="inne">Inne</label></a>
+            <label for="inne">Inne</label>
         </div>
         <div class="form-input">
             <label>Imię klienta</label>
@@ -27,67 +27,14 @@
             <input type="text">
         </div>
 
-        <div class="form-input if-1">
-            <label>Typ aktu</label>
-            <select class="form-control selectpicker" id="select-type" data-live-search="true">
-                <option selected disabled value="no">Wybierz</option>
-                <option value="yes" data-price="yes" data-credit="yes" data-duty="yes" data-tax="yes" data-charge="yes">
-                    Sprzedaż
-                </option>
-                <option value="yes" data-price="yes" data-credit="yes" data-duty="yes" data-tax="yes" data-charge="yes">
-                    Przedwstępna sprzedaż
-                </option>
-                <option value="yes" data-price="yes" data-credit="yes" data-duty="yes" data-tax="yes" data-charge="yes">
-                    Warunkowa sprzedaż
-                </option>
-                <option value="yes" data-price="yes" data-credit="yes" data-duty="no" data-tax="yes" data-charge="yes">
-                    Przeniesienie własności
-                </option>
-                <option value="yes" data-price="value" data-duty="yes" data-othertax="yes">Darowizna</option>
-                <option value="yes" data-price="yes" data-duty="yes" data-tax="yes" data-othertax="yes"
-                        data-charge="yes">Dział spadku
-                </option>
-                <option value="yes" data-price="yes" data-duty="yes" data-tax="yes" data-othertax="yes"
-                        data-charge="yes">Dział spadku + zniesienie własności
-                </option>
-                <option value="yes" data-price="yes" data-duty="yes" data-tax="yes" data-othertax="yes"
-                        data-charge="yes">Zniesienie współwłasności
-                </option>
-                <option value="no" data-price="no" data-duty="no">Deweloperska</option>
-                <option value="no" data-price="no" data-duty="no">Ustanowienie odrębnej własności</option>
-                <option value="no" data-price="no" data-duty="no">APD</option>
-                <option value="yes" data-price="yes" data-duty="yes">Umowa majątkowa małżeńska</option>
-                <option value="yes" data-price="yes" data-duty="yes" data-tax="yes" data-charge="yes">UMM + podział
-                    majątku
-                </option>
-                <option value="yes" data-price="yes" data-duty="yes" data-tax="yes" data-charge="yes">Podział majątku
-                </option>
-                <option value="yes" data-price="yes" data-duty="yes" data-charge="yes">Dożywocie</option>
-                <option value="no" data-price="no" data-duty="no">Protokół spółki</option>
-                <option value="no" data-price="no" data-duty="no">Pełnomocnictwo</option>
-                <option value="no" data-price="no" data-duty="no">Odrzucenie spadku</option>
-                <option value="other" data-price="no" data-duty="no">Inne</option>
-            </select>
-        </div>
+        <partial src="_firstSelect.html"></partial>
 
         <div class="form-input other">
             <label>Podaj typ aktu</label>
             <input type="text">
         </div>
 
-        <div class="form-input if-2">
-            <label>Przedmiot umowy</label>
-            <select class="form-control selectpicker" id="selectobject" data-live-search="true">
-                <option selected disabled value="no">Wybierz</option>
-                <option>Lokal</option>
-                <option>Spółdzielcze własnościowe</option>
-                <option>Własność gruntu rolnego</option>
-                <option>Własność gruntu nierolnego</option>
-                <option>Użytkowanie wieczyste</option>
-                <option>Nakłady</option>
-                <option value="otherobject">Inne</option>
-            </select>
-        </div>
+        <partial src="_secondSelect.html"></partial>
 
         <div class="form-input">
             <label>Opis czynności (imiona, nazwiska, role, przedmiot)</label>
@@ -106,130 +53,9 @@
             </div>
         </div>
 
-        <div class="form-input nomargin if-3">
-            <div class="form-input changeform">
-                <label class="cena changelabel" for="cena">Cena [zł]</label>
-                <input type="number" id="cena" class="changeinput" name="cena" min="0">
-            </div>
-            <div class="form-input row">
-                <input class="checkbox-input" type="checkbox" id="cenanieznana" name="nieznana" value="nieznana">
-                <label class="nomargin" for="cenanieznana">Cena nieznana</label>
-            </div>
-        </div>
+        <partial src="_price.html"></partial>
 
-        <div class="form-input nomargin if-4">
-            <div class="form-input changeform">
-                <label class="wartosc changelabel" for="wartosc">Wartość</label>
-                <input type="number" id="wartosc" class="changeinput" name="wartosc" min="0">
-            </div>
-            <div class="form-input row">
-                <input class="checkbox-input" type="checkbox" id="wartoscnieznana" name="nieznana" value="nieznana">
-                <label class="nomargin" for="wartoscnieznana">Wartość nieznana</label>
-            </div>
-        </div>
-
-        <div class="question if-3">
-            <span class="label-span">Płatność przelewem (w tym częściowa):</span>
-            <input type="radio" id="przelew" name="platnosc" value="przelew">
-            <label class="small" for="przelew">Tak</label>
-            <input type="radio" id="gotowka" name="platnosc" value="gotowka">
-            <label class="small" for="gotowka">Nie</label>
-        </div>
-
-        <div class="form-input account">
-            <label for="numer">Numer konta</label>
-            <input type="number" id="numer" name="numer" min="0">
-        </div>
-
-        <div class="question nextDiv if-3">
-            <span class="label-span">Termin płatności <br>1 transzy:</span>
-            <input type="radio" class="tensam" id="tensam" data-date="date-0" name="termin" value="tensam">
-            <label class="small" for="tensam">W dniu aktu</label>
-            <input type="radio" class="inny" id="inny-0" data-date="date-0" name="termin" value="inny">
-            <label class="small" for="inny-0">Inny</label>
-
-            <div class="form-input row date" id="date-0">
-                <span for="example-date-input" class="label-span">Wybierz termin:</span>
-                <input class="form-control date-input" type="date" value="2011-08-19" id="example-date-input">
-            </div>
-
-            <button type="button" class="btn-class if-3 add-next" data-next="next-1">Dodaj termin płatności kolejnej transzy</button>
-        </div>
-
-        <div class="question nextDiv" id="next-1">
-            <span class="label-span">Termin płatności <br>2 transzy:</span>
-            <input type="radio" class="tensam" id="tensam-1" data-date="date-1" name="termin-1" value="tensam">
-            <label class="small" for="tensam-1">W dniu aktu</label>
-            <input type="radio" class="inny" id="inny-1" data-date="date-1" name="termin-1" value="inny">
-            <label class="small" for="inny-1">Inny</label>
-
-            <div class="form-input row date" id="date-1">
-                <span for="example-date-input" class="label-span">Wybierz termin:</span>
-                <input class="form-control date-input" type="date" value="2011-08-19" id="example-date-input-1">
-            </div>
-
-            <button type="button" class="btn-class add-next" data-next="next-2">Dodaj termin płatności kolejnej transzy</button>
-        </div>
-
-        <div class="question nextDiv" id="next-2">
-            <span class="label-span">Termin płatności <br>3 transzy:</span>
-            <input type="radio" class="tensam" id="tensam-2" data-date="date-2" name="termin-2" value="tensam">
-            <label class="small" for="tensam-2">W dniu aktu</label>
-            <input type="radio" class="inny" id="inny-2" data-date="date-2" name="termin-2" value="inny">
-            <label class="small" for="inny-2">Inny</label>
-
-            <div class="form-input row date" id="date-2">
-                <span for="example-date-input" class="label-span">Wybierz termin:</span>
-                <input class="form-control date-input" type="date" value="2011-08-19" id="example-date-input-2">
-            </div>
-
-            <button type="button" class="btn-class add-next" data-next="next-3">Dodaj termin płatności kolejnej transzy</button>
-        </div>
-
-        <div class="question nextDiv" id="next-3">
-            <span class="label-span">Termin płatności <br>4 transzy:</span>
-            <input type="radio" class="tensam" id="tensam-3" data-date="date-3" name="termin-3" value="tensam">
-            <label class="small" for="tensam-3">W dniu aktu</label>
-            <input type="radio" class="inny" id="inny-3" data-date="date-3" name="termin-3" value="inny">
-            <label class="small" for="inny-3">Inny</label>
-
-            <div class="form-input row date" id="date-3">
-                <span for="example-date-input" class="label-span">Wybierz termin:</span>
-                <input class="form-control date-input" type="date" value="2011-08-19" id="example-date-input-3">
-            </div>
-
-            <button type="button" class="btn-class add-next" data-next="next-4">Dodaj termin płatności kolejnej transzy</button>
-        </div>
-
-        <div class="question nextDiv" id="next-4">
-            <span class="label-span">Termin płatności <br>5 transzy:</span>
-            <input type="radio" class="tensam" id="tensam-4" data-date="date-4" name="termin-4" value="tensam">
-            <label class="small" for="tensam-4">W dniu aktu</label>
-            <input type="radio" class="inny" id="inny-4" data-date="date-4" name="termin-4" value="inny">
-            <label class="small" for="inny-4">Inny</label>
-
-            <div class="form-input row date" id="date-4">
-                <span for="example-date-input" class="label-span">Wybierz termin:</span>
-                <input class="form-control date-input" type="date" value="2011-08-19" id="example-date-input-4">
-            </div>
-
-            <button type="button" class="btn-class add-next-final">Dodaj termin płatności kolejnej transzy</button>
-        </div>
-
-        <div class="form-input nextDiv next-final">
-            <label>Termin płatności kolejnych transzy:</label>
-            <textarea rows="4"></textarea>
-        </div>
-
-        <div class="question if-5">
-            <span class="label-span">Kredyt</span>
-            <input type="radio" id="tak" name="kredyt" value="tak">
-            <label class="smaller" for="tak">Tak</label>
-            <input type="radio" id="nie" name="kredyt" value="nie">
-            <label class="smaller" for="nie">Nie</label>
-            <input type="radio" id="niewiadomo" name="kredyt" value="niewiadomo">
-            <label class="small" for="niewiadomo">Nie wiadomo</label>
-        </div>
+        <partial src="_payment.html"></partial>
 
         <div class="form-input nomargin if-3">
             <div class="form-input changeform">
@@ -253,65 +79,9 @@
             </div>
         </div>
 
-        <div class="question column ukur">
-            <span class="label-span">Wymóg zgody na zbycie UKUR</span>
-            <div class="question">
-                <input type="radio" id="wymog" name="wymog" value="wymog">
-                <label class="smaller" for="wymog">Tak</label>
-                <input type="radio" id="brakwymogu" name="wymog" value="brakwymogu">
-                <label class="smaller" for="brakwymogu">Nie</label>
-            </div>
-        </div>
+        <partial src="_ukur.html"></partial>
 
-        <div class="question column ukur">
-            <span class="label-span">Wymóg zgody na nabycie UKUR</span>
-            <div class="question">
-                <input type="radio" id="wymognabycie" name="wymognabycie" value="wymognabycie">
-                <label class="smaller" for="wymognabycie">Tak</label>
-                <input type="radio" id="brakwymogunabycie" name="wymognabycie" value="brakwymogunabycie">
-                <label class="smaller" for="brakwymogunabycie">Nie</label>
-            </div>
-        </div>
-
-        <div class="question column ukur">
-            <span class="label-span">Obowiązek z art. 2b UKUR</span>
-            <div class="question">
-                <input type="radio" id="obowiazek" name="obowiazek" value="obowiazek">
-                <label class="smaller" for="obowiazek">Tak</label>
-                <input type="radio" id="brakobowiazku" name="obowiazek" value="brakobowiazku">
-                <label class="smaller" for="brakobowiazku">Nie</label>
-            </div>
-        </div>
-
-        <div class="question column if-7">
-            <span class="label-span">Podatek dochodowy</span>
-            <div class="question">
-                <input type="radio" id="podatek" name="podatek" value="podatek">
-                <label class="smaller" for="podatek">Tak</label>
-                <input type="radio" id="brakpodatku" name="podatek" value="brakpodatku">
-                <label class="smaller" for="brakpodatku">Nie</label>
-            </div>
-        </div>
-
-        <div class="question column if-8">
-            <span class="label-span">Podatek PCC</span>
-            <div class="question">
-                <input type="radio" id="podatekPCC" name="podatekPCC" value="podatekPCC">
-                <label class="smaller" for="podatekPCC">Tak</label>
-                <input type="radio" id="brakpodatkuPCC" name="podatekPCC" value="brakpodatkuPCC">
-                <label class="smaller" for="brakpodatkuPCC">Nie</label>
-            </div>
-        </div>
-
-        <div class="question column if-8">
-            <span class="label-span">Podatek SD</span>
-            <div class="question">
-                <input type="radio" id="podatekSD" name="podatekSD" value="podatekSD">
-                <label class="smaller" for="podatekSD">Tak</label>
-                <input type="radio" id="brakpodatkuSD" name="podatekSD" value="brakpodatkuSD">
-                <label class="smaller" for="brakpodatkuSD">Nie</label>
-            </div>
-        </div>
+        <partial src="_tax.html"></partial>
 
         <div class="question column if-9">
             <span class="label-span">Opłata planistyczna</span>
@@ -323,12 +93,14 @@
             </div>
         </div>
 
-        <div class="form-input">
+        <partial src="_documents.html"></partial>
+
+        <div class="form-input other-doc">
             <label>Dodatkowe dokumenty do sporządzenia</label>
             <textarea rows="5"></textarea>
         </div>
 
-        <div class="form-input">
+        <div class="form-input comments">
             <label>Uwagi</label>
             <textarea rows="15"></textarea>
         </div>
