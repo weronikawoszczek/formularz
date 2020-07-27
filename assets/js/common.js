@@ -93,9 +93,10 @@ app.common = {
             else {
                 $('.other-object').slideUp();
             }
+        });
 
-            var ukur = selected.data('ukur');
-            if (ukur == "yes") {
+        $("#ukur").change(function () {
+            if(this.checked) {
                 $('.ukur').slideDown().css('display', 'flex');
             }
             else {
