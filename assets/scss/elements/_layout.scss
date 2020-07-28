@@ -357,3 +357,41 @@ form {
     font-size: 14px;
   }
 }
+
+.document-el{
+  display: flex;
+  margin-bottom: 10px;
+  align-items: center;
+  justify-content: space-between;
+  background: radial-gradient(rgba(223, 223, 223, 0.54), transparent);
+
+  .input-wrap{
+    display: flex;
+    width: 114px;
+    justify-content: space-around;
+  }
+
+  .input-title{
+    width: 58px;
+    text-align: center;
+  }
+
+  input{
+    width: 45px;
+    margin: 0 5px;
+    border: 1px solid $main;
+    border-radius: 5px;
+    padding: 5px 4px;
+    height: auto;
+    &::placeholder{
+      font-size: 9px;
+    }
+  }
+
+  label{
+    margin-bottom: 0;
+    &.grayed{
+      color: #9b9b9b;
+    }
+  }
+}

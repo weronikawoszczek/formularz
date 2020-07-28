@@ -14,6 +14,7 @@ app.common = {
             $('.if-6').slideUp();
             $('.if-3').slideUp();
             $('.account').slideUp();
+            $('.nextDiv').slideUp();
             $('.if-4').slideUp();
             $('.if-5').slideUp();
             $('.ukur').slideUp();
@@ -148,7 +149,6 @@ app.common = {
         $('.add-next').click(function () {
             $(this).slideUp();
             var nextDiv = $(this).data('next');
-            console.log(nextDiv);
             $('#' + nextDiv).slideDown().css('display', 'flex');
         });
 
@@ -185,6 +185,21 @@ app.common = {
                 $("#wartosc").prop('disabled', false);
                 $("#sposob.changeinput").removeClass('grayed');
                 $(".sposob.changelabel").removeClass('grayed');
+            }
+        });
+
+        $(".input-number").change(function () {
+
+            var inputValue = $(this).val();
+            var inputValueIs = $(this).siblings('.input-number').val();
+
+            console.log('inputValue = ' + inputValue);
+            console.log('inputValueIs = ' + inputValueIs);
+
+            if ((inputValue == "0" || inputValue == "") && (inputValueIs == "0" || inputValueIs == "")) {
+                $(this).parent().parent().find('label').addClass('grayed');
+            } else {
+                $(this).parent().parent().find('label').removeClass('grayed');
             }
         });
     }
