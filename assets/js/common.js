@@ -52,11 +52,12 @@ app.common = {
                 $('.if-3').slideDown().css('display', 'flex');
             }
             else if (price == "value") {
-                $('.if-3').slideUp();
+                $('.if-3, .nextDiv').slideUp();
                 $('.if-4').slideDown();
             }
             else {
                 $('.if-3').slideUp();
+                $('.if-3, .nextDiv').slideUp();
                 $('.if-4').slideUp();
             }
 
@@ -99,6 +100,25 @@ app.common = {
             else {
                 $('.if-9').slideUp();
             }
+
+            var sale = selected.data('sale');
+            var liNoSale = $('.no-sale').parent('li');
+            var liSale = $('.sale').parent('li');
+
+            if (sale == "yes") {
+                liSale.css('display', 'block');
+                liNoSale.css('display', 'none');
+
+                $('.przedaktem').slideDown();
+                $('.smaller-label').addClass('active');
+            }
+            else {
+                liSale.css('display', 'none');
+                liNoSale.css('display', 'block');
+
+                $('.przedaktem').slideUp();
+                $('.smaller-label').removeClass('active');
+            }
         });
 
         $("#selectobject").change(function () {
@@ -108,6 +128,15 @@ app.common = {
             }
             else {
                 $('.other-object').slideUp();
+            }
+
+            var selectedOption = $(this).find(':selected');
+            var lokal = selectedOption.data('first');
+            if (lokal == "yes") {
+                $('.type-1, .title-el').slideDown().css('display', 'flex');
+            }
+            else {
+                $('.type-1, .title-el').slideUp();
             }
         });
 

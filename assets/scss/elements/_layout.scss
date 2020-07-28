@@ -165,6 +165,13 @@ form {
     }
   }
 
+  .smaller-label{
+    &.active{
+      font-size: 11px;
+      min-width: 70px;
+    }
+  }
+
   input:checked + label {
     background-image: linear-gradient(to bottom right, #ffffff, $aux);
     border-color: $aux-darker;
@@ -257,6 +264,7 @@ form {
   .checkbox-input {
     width: 20px;
     margin: 0 10px 0 0;
+    margin: 0 10px 0 0;
   }
 
   .date-input{
@@ -284,7 +292,7 @@ form {
   }
 }
 
-.if-1, .other, .if-2, .other-object, .if-3, .if-4, .account, .date, .if-5, .if-6, .ukur, .if-7, .if-8, .if-9, .nextDiv, .documents {
+.if-1, .other, .if-2, .other-object, .if-3, .if-4, .account, .date, .if-5, .if-6, .ukur, .if-7, .if-8, .if-9, .nextDiv, .documents, .title-el, .type-1 {
   display: none;
 }
 
@@ -359,15 +367,21 @@ form {
 }
 
 .document-el{
-  display: flex;
   margin-bottom: 10px;
   align-items: center;
+  padding: 5px;
   justify-content: space-between;
   background: radial-gradient(rgba(223, 223, 223, 0.54), transparent);
 
+  &.title-el{
+    label, .label-span{
+      color: $aux-darker;
+    }
+  }
+
   .input-wrap{
     display: flex;
-    width: 114px;
+    width: 100px;
     justify-content: space-around;
   }
 
@@ -378,7 +392,7 @@ form {
 
   input{
     width: 45px;
-    margin: 0 5px;
+    margin: 0 0 0 5px;
     border: 1px solid $main;
     border-radius: 5px;
     padding: 5px 4px;
@@ -390,6 +404,7 @@ form {
 
   label{
     margin-bottom: 0;
+    width: 74%;
     &.grayed{
       color: #9b9b9b;
     }

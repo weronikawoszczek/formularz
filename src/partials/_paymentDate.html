@@ -1,16 +1,18 @@
 <div class="question nextDiv if-3">
     <span class="label-span">Termin płatności <br>1 transzy:</span>
+    <input type="radio" class="przedaktem" id="przedaktem" data-date="date-0" name="termin" value="przedaktem">
+    <label class="small smaller-label przedaktem" for="przedaktem">Przed aktem</label>
     <input type="radio" class="tensam" id="tensam" data-date="date-0" name="termin" value="tensam">
-    <label class="small" for="tensam">W dniu aktu</label>
+    <label class="small smaller-label" for="tensam">W dniu aktu</label>
     <input type="radio" class="inny" id="inny-0" data-date="date-0" name="termin" value="inny">
-    <label class="small" for="inny-0">Inny</label>
+    <label class="small smaller-label" for="inny-0">Inny</label>
 
     <div class="form-input row date" id="date-0">
         <span for="example-date-input" class="label-span">Wybierz termin:</span>
         <input class="form-control date-input" type="date" value="2011-08-19" id="example-date-input">
     </div>
 
-    <button type="button" class="btn-class if-3 add-next" data-next="next-1">Dodaj termin płatności kolejnej transzy</button>
+    <button type="button" class="btn-class add-next" data-next="next-1">Dodaj termin płatności kolejnej transzy</button>
 </div>
 
 <div class="question nextDiv" id="next-1">

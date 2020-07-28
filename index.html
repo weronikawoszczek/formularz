@@ -56,7 +56,7 @@
                     data-live-search="true">
                         <option selected disabled value="no">Wybierz</option>
                         <option value="yes" data-price="yes" data-credit="yes"
-                        data-duty="yes" data-tax="yes" data-charge="yes">Sprzedaż</option>
+                        data-duty="yes" data-tax="yes" data-charge="yes" data-sale="yes">Sprzedaż</option>
                         <option value="yes" data-price="yes" data-credit="yes"
                         data-duty="yes" data-tax="yes" data-charge="yes">Przedwstępna sprzedaż</option>
                         <option value="yes" data-price="yes" data-credit="yes"
@@ -97,10 +97,12 @@
                     <select class="form-control selectpicker" id="selectobject"
                     data-live-search="true">
                         <option selected disabled value="no">Wybierz</option>
-                        <option>Lokal</option>
+                        <option data-first="yes">Lokal</option>
                         <option>Spółdzielcze własnościowe</option>
-                        <option>Własność gruntu rolnego</option>
-                        <option>Własność gruntu nierolnego</option>
+                        <option class="no-sale">Własność gruntu rolnego</option>
+                        <option class="no-sale">Własność gruntu nierolnego</option>
+                        <option class="sale">Własność gruntu niezabudowanego</option>
+                        <option class="sale">Własność gruntu zabudowanego</option>
                         <option>Użytkowanie wieczyste</option>
                         <option>Nakłady</option>
                         <option value="otherobject">Inne</option>
@@ -160,18 +162,21 @@
                 <div class="question nextDiv if-3"> <span class="label-span">Termin płatności <br>1 transzy:</span>
 
                     <input
-                    type="radio" class="tensam" id="tensam" data-date="date-0" name="termin"
-                    value="tensam">
-                        <label class="small" for="tensam">W dniu aktu</label>
+                    type="radio" class="przedaktem" id="przedaktem" data-date="date-0" name="termin"
+                    value="przedaktem">
+                        <label class="small smaller-label przedaktem" for="przedaktem">Przed aktem</label>
+                        <input type="radio" class="tensam" id="tensam" data-date="date-0"
+                        name="termin" value="tensam">
+                        <label class="small smaller-label" for="tensam">W dniu aktu</label>
                         <input type="radio" class="inny" id="inny-0" data-date="date-0"
                         name="termin" value="inny">
-                        <label class="small" for="inny-0">Inny</label>
+                        <label class="small smaller-label" for="inny-0">Inny</label>
                         <div class="form-input row date" id="date-0"> <span for="example-date-input" class="label-span">Wybierz termin:</span>
 
                             <input
                             class="form-control date-input" type="date" value="2011-08-19" id="example-date-input">
                         </div>
-                        <button type="button" class="btn-class if-3 add-next" data-next="next-1">Dodaj termin płatności kolejnej transzy</button>
+                        <button type="button" class="btn-class add-next" data-next="next-1">Dodaj termin płatności kolejnej transzy</button>
                 </div>
                 <div class="question nextDiv" id="next-1"> <span class="label-span">Termin płatności <br>2 transzy:</span>
 
@@ -338,41 +343,170 @@
             </div>
         </div>
         <div class="form-input documents-list">
-            <div class="document-el">
+            <div class="document-el title-el">
                 <label for="doc-1">Nazwa dokumentu</label>
                 <div class="input-wrap"> <span class="input-title label-span">Potrzeba</span>
  <span class="input-title label-span">Jest</span>
 
                 </div>
             </div>
-            <div class="document-el">
-                <label class="grayed" for="doc-1">Document 1</label>
-                <div class="input-wrap">
+            <div class="document-el type-1">
+                <label class="grayed" for="doc-1">Numer księgi wieczystej lub Odpis z księgi wieczystej - Sąd Rejonowy</label>
+                <div
+                class="input-wrap">
                     <input class="input-number" type="number" id="doc-1" name="doc1" min="0">
                     <input class="input-number" type="number" id="doc-1-1" name="doc1" min="0">
-                </div>
             </div>
-            <div class="document-el">
-                <label class="grayed" for="doc-2">Document 2</label>
-                <div class="input-wrap">
-                    <input class="input-number" type="number" id="doc-2" name="doc1" min="0">
-                    <input class="input-number" type="number" id="doc-2-1" name="doc1" min="0">
-                </div>
+        </div>
+        <div class="document-el type-1">
+            <label class="grayed" for="doc-2">Zaświadczenie od zarządcy nieruch. wspólnej
+                <br>o braku zaległości w opłatach</label>
+            <div class="input-wrap">
+                <input class="input-number" type="number" id="doc-2" name="doc1" min="0">
+                <input class="input-number" type="number" id="doc-2-1" name="doc1" min="0">
             </div>
-            <div class="document-el">
-                <label class="grayed" for="doc-3">Document 3</label>
-                <div class="input-wrap">
-                    <input class="input-number" type="number" id="doc-3" name="doc1" min="0">
-                    <input class="input-number" type="number" id="doc-3-1" name="doc1" min="0">
-                </div>
+        </div>
+        <div class="document-el type-1">
+            <label class="grayed" for="doc-3">Wypis z rejestru gruntów z wypisem z kartoteki budynków (lokal stanowiący
+                odrębną nieruchomość) - Starostwo Powiatowe</label>
+            <div class="input-wrap">
+                <input class="input-number" type="number" id="doc-3" name="doc1" min="0">
+                <input class="input-number" type="number" id="doc-3-1" name="doc1" min="0">
             </div>
-            <div class="document-el">
-                <label class="grayed" for="doc-4">Document 4</label>
-                <div class="input-wrap">
-                    <input class="input-number" type="number" id="doc-4" name="doc1" min="0">
-                    <input class="input-number" type="number" id="doc-4-1" name="doc1" min="0">
-                </div>
+        </div>
+        <div class="document-el type-1">
+            <label class="grayed">Podstawa nabycia nieruchomości ( akt notarialny, postanowienie, przydział
+                lokalu)</label>
+            <div class="input-wrap">
+                <input class="input-number" type="number" min="0">
+                <input class="input-number" type="number" min="0">
             </div>
+        </div>
+        <div class="document-el type-1">
+            <label class="grayed">Prawomocne postanowienie Sądu
+                <br>o stwierdzeniu nabycia spadku lub akt poświadczenia dziedziczenia</label>
+            <div
+            class="input-wrap">
+                <input class="input-number" type="number" min="0">
+                <input class="input-number" type="number" min="0">
+        </div>
+        </div>
+        <div class="document-el type-1">
+            <label class="grayed">Prawomocne postanowienie Sądu dział spadku i/lub zniesienie współwłasności</label>
+            <div
+            class="input-wrap">
+                <input class="input-number" type="number" min="0">
+                <input class="input-number" type="number" min="0">
+        </div>
+        </div>
+        <div class="document-el type-1">
+            <label class="grayed">Zaświadczenie z Urzędu Skarbowego o uregulowanym podatku (od spadku-zawsze;
+                <br>od darowizny lub nieodpłatnego zniesienia współwłasności po 01.01.2007
+                r.)</label>
+            <div class="input-wrap">
+                <input class="input-number" type="number" min="0">
+                <input class="input-number" type="number" min="0">
+            </div>
+        </div>
+        <div class="document-el type-1">
+            <label class="grayed">Zaświadczenie z Urzędu Miasta/Gminy czy nieruchomość położona jest w obszarze
+                rewitalizacji ; Specjalnej Strefy Rewitalizacji (jeśli tak to i o jej pierwokupie);</label>
+            <div
+            class="input-wrap">
+                <input class="input-number" type="number" min="0">
+                <input class="input-number" type="number" min="0">
+        </div>
+        </div>
+        <div class="document-el type-1">
+            <label class="grayed">Umowa kredytowa zawarta z bankiem z oświadczeniami;</label>
+            <div class="input-wrap">
+                <input class="input-number" type="number" min="0">
+                <input class="input-number" type="number" min="0">
+            </div>
+        </div>
+        <div class="document-el type-1">
+            <label class="grayed">Zaświadczenie z banku o wysokości zadłużenia (nieruchomość obciążona kredytem);</label>
+            <div
+            class="input-wrap">
+                <input class="input-number" type="number" min="0">
+                <input class="input-number" type="number" min="0">
+        </div>
+        </div>
+        <div class="document-el type-1">
+            <label class="grayed">Zgoda banku na wykreślenie hipotek (kredyt spłacony);</label>
+            <div class="input-wrap">
+                <input class="input-number" type="number" min="0">
+                <input class="input-number" type="number" min="0">
+            </div>
+        </div>
+        <div class="document-el type-1">
+            <label class="grayed">Zaświadczenie o zameldowaniu na pobyt stały</label>
+            <div class="input-wrap">
+                <input class="input-number" type="number" min="0">
+                <input class="input-number" type="number" min="0">
+            </div>
+        </div>
+        <div class="document-el type-1">
+            <label class="grayed">Odpis skrócony aktu małżeństwa</label>
+            <div class="input-wrap">
+                <input class="input-number" type="number" min="0">
+                <input class="input-number" type="number" min="0">
+            </div>
+        </div>
+        <div class="document-el type-1">
+            <label class="grayed">Odpis skrócony aktu urodzenia</label>
+            <div class="input-wrap">
+                <input class="input-number" type="number" min="0">
+                <input class="input-number" type="number" min="0">
+            </div>
+        </div>
+        <div class="document-el type-1">
+            <label class="grayed">Odpis skrócony aktu zgonu</label>
+            <div class="input-wrap">
+                <input class="input-number" type="number" min="0">
+                <input class="input-number" type="number" min="0">
+            </div>
+        </div>
+        <div class="document-el type-1">
+            <label class="grayed">Dane osobowe z dokumentu tożsamości: imiona, nazwiska, imiona rodziców,
+                adres stałego zamieszkania z kodem pocztowym,
+                <br>nr i termin ważności dowodu osobistego, PESEL;</label>
+            <div class="input-wrap">
+                <input class="input-number" type="number" min="0">
+                <input class="input-number" type="number" min="0">
+            </div>
+        </div>
+        <div class="document-el type-1">
+            <label class="grayed">Stan cywilny i ustrój majątkowy z daty nabycia i zbycia każdej ze stron
+                umowy,</label>
+            <div class="input-wrap">
+                <input class="input-number" type="number" min="0">
+                <input class="input-number" type="number" min="0">
+            </div>
+        </div>
+        <div class="document-el type-1">
+            <label class="grayed">Tel. kontaktowy do drugiej strony czynności (jeśli dotyczy)</label>
+            <div
+            class="input-wrap">
+                <input class="input-number" type="number" min="0">
+                <input class="input-number" type="number" min="0">
+        </div>
+        </div>
+        <div class="document-el type-1">
+            <label class="grayed">Wartość nieruchomości/Cena</label>
+            <div class="input-wrap">
+                <input class="input-number" type="number" min="0">
+                <input class="input-number" type="number" min="0">
+            </div>
+        </div>
+        <div class="document-el type-1">
+            <label class="grayed">Zaświadczenie z biura meldunkowego o braku osób zameldowanych (jeśli chcą
+                nabywcy).</label>
+            <div class="input-wrap">
+                <input class="input-number" type="number" min="0">
+                <input class="input-number" type="number" min="0">
+            </div>
+        </div>
         </div>
         <div class="form-input form-list documents"> <span class="label-span big">Dokumenty do uzupełnienia</span>
 

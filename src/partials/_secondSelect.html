@@ -2,10 +2,12 @@
     <label>Przedmiot umowy</label>
     <select class="form-control selectpicker" id="selectobject" data-live-search="true">
         <option selected disabled value="no">Wybierz</option>
-        <option>Lokal</option>
+        <option data-first="yes">Lokal</option>
         <option>Spółdzielcze własnościowe</option>
-        <option>Własność gruntu rolnego</option>
-        <option>Własność gruntu nierolnego</option>
+        <option class="no-sale">Własność gruntu rolnego</option>
+        <option class="no-sale">Własność gruntu nierolnego</option>
+        <option class="sale">Własność gruntu niezabudowanego</option>
+        <option class="sale">Własność gruntu zabudowanego</option>
         <option>Użytkowanie wieczyste</option>
         <option>Nakłady</option>
         <option value="otherobject">Inne</option>
