@@ -2,7 +2,6 @@
 <html lang="en">
 <partial src="_head.html"></partial>
 <body>
-<!--<partial src="_header.html"></partial>-->
 <div class="page-limiter">
     <form>
         <h3>formularz</h3>
@@ -46,7 +45,7 @@
             <input type="text">
         </div>
 
-        <div class="form-input nomargin if-6">
+        <div class="form-input nomargin if-ukur">
             <div class="form-input row">
                 <input class="checkbox-input" type="checkbox" id="ukur" name="nieznana" value="nieznana">
                 <label class="nomargin" for="ukur">Podlega UKUR</label>
@@ -57,7 +56,7 @@
 
         <partial src="_payment.html"></partial>
 
-        <div class="form-input nomargin if-3">
+        <div class="form-input nomargin if-6">
             <div class="form-input changeform">
                 <label class="sposob changelabel" for="sposob">Sposób wydania</label>
                 <input type="text" id="sposob" class="changeinput" name="sposob">
@@ -69,8 +68,10 @@
             </div>
         </div>
 
-        <div class="question column if-3">
-            <span class="label-span">Sprawdzono pierwokupy i prawa nabycia za równowartość</span>
+        <partial src="_landregistry.html"></partial>
+
+        <div class="question column if-6">
+            <span class="label-span">Sprawdzono pierwokupy i prawa nabycia za równowartość (również podstawę nabycia)</span>
             <div class="question">
                 <input type="radio" id="sprawdzono" name="pierwokupy" value="tak">
                 <label class="smaller" for="sprawdzono">Tak</label>
@@ -83,7 +84,7 @@
 
         <partial src="_tax.html"></partial>
 
-        <div class="question column if-9">
+        <div class="question column if-charge">
             <span class="label-span">Opłata planistyczna</span>
             <div class="question">
                 <input type="radio" id="oplata" name="oplata" value="oplata">
@@ -93,7 +94,7 @@
             </div>
         </div>
 
-        <partial src="_documentsList.html"></partial>
+        <a class="btn-class alert" href="/documents.html">Lista dokumentow</a>
 
         <partial src="_documents.html"></partial>
 

@@ -2,7 +2,7 @@
   "name": "app",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "mikolaj.sitek@amsterdamstandard.pl",
+  "author": "wer",
   "license": "MIT",
   "directories": {
     "lib": "dist/assets/lib/"

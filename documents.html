@@ -1,48 +1,209 @@
-<div class="form-input form-list"> <span class="label-span big">Dokumenty do uzupełnienia</span>
+<head>
+    <title>Formularz</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css"
+          rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
+    <link rel="stylesheet" href="./dist/assets/css/main.min.css">
+    <link rel="icon" href="../../dist/assets/img/favicon.png">
+    <script src="https://kit.fontawesome.com/241cd5ebad.js"></script>
+    <script>
+        app = {}
+    </script>
+</head>
 
-    <input type="checkbox"
-    id="dok1" name="dok1" checked>
-    <label for="dok1">Dokument 1</label>
-    <input type="checkbox" id="dok2" name="dok2" checked>
-    <label class="label-span" for="dok2">Dokument 2</label>
-    <div class="list"> <span>1.</span>
+<div class="documents-limiter">
+    <div class="documents-list">
+        <div class="document-el title-el">
+            <label for="doc-1">Nazwa dokumentu</label>
+            <div class="input-wrap">
+                <span class="input-title label-span">Potrzeba</span>
+                <span class="input-title label-span">Jest</span>
+            </div>
+        </div>
 
-        <input type="text">
+        <div class="document-el type-1">
+            <label class="grayed" for="doc-1">Numer księgi wieczystej lub Odpis z księgi wieczystej - Sąd
+                Rejonowy</label>
+            <div class="input-wrap">
+                <input class="input-number" type="number" id="doc-1" name="doc1" min="0">
+                <input class="input-number" type="number" id="doc-1-1" name="doc1" min="0">
+            </div>
+        </div>
+
+        <div class="document-el type-1">
+            <label class="grayed" for="doc-2">Zaświadczenie od zarządcy nieruch. wspólnej o braku zaległości w
+                opłatach</label>
+            <div class="input-wrap">
+                <input class="input-number" type="number" id="doc-2" name="doc1" min="0">
+                <input class="input-number" type="number" id="doc-2-1" name="doc1" min="0">
+            </div>
+        </div>
+
+        <div class="document-el type-1">
+            <label class="grayed" for="doc-3">Wypis z rejestru gruntów z wypisem z kartoteki budynków (lokal stanowiący
+                odrębną nieruchomość) - Starostwo Powiatowe
+            </label>
+            <div class="input-wrap">
+                <input class="input-number" type="number" id="doc-3" name="doc1" min="0">
+                <input class="input-number" type="number" id="doc-3-1" name="doc1" min="0">
+            </div>
+        </div>
+
+        <div class="document-el type-1">
+            <label class="grayed">Podstawa nabycia nieruchomości ( akt notarialny, postanowienie, przydział
+                lokalu)</label>
+            <div class="input-wrap">
+                <input class="input-number" type="number" min="0">
+                <input class="input-number" type="number" min="0">
+            </div>
+        </div>
+
+        <div class="document-el type-1">
+            <label class="grayed">Prawomocne postanowienie Sądu o stwierdzeniu nabycia spadku lub akt poświadczenia
+                dziedziczenia</label>
+            <div class="input-wrap">
+                <input class="input-number" type="number" min="0">
+                <input class="input-number" type="number" min="0">
+            </div>
+        </div>
+
+        <div class="document-el type-1">
+            <label class="grayed">Prawomocne postanowienie Sądu dział spadku i/lub zniesienie współwłasności</label>
+            <div class="input-wrap">
+                <input class="input-number" type="number" min="0">
+                <input class="input-number" type="number" min="0">
+            </div>
+        </div>
+
+        <div class="document-el type-1">
+            <label class="grayed">Zaświadczenie z Urzędu Skarbowego o uregulowanym podatku (od spadku-zawsze; od
+                darowizny lub nieodpłatnego zniesienia współwłasności po 01.01.2007 r.)</label>
+            <div class="input-wrap">
+                <input class="input-number" type="number" min="0">
+                <input class="input-number" type="number" min="0">
+            </div>
+        </div>
+
+        <div class="document-el type-1">
+            <label class="grayed">Zaświadczenie z Urzędu Miasta/Gminy czy nieruchomość położona jest w obszarze
+                rewitalizacji ; Specjalnej Strefy Rewitalizacji (jeśli tak to i o jej pierwokupie);</label>
+            <div class="input-wrap">
+                <input class="input-number" type="number" min="0">
+                <input class="input-number" type="number" min="0">
+            </div>
+        </div>
+
+        <div class="document-el type-1">
+            <label class="grayed">Umowa kredytowa zawarta z bankiem z oświadczeniami;</label>
+            <div class="input-wrap">
+                <input class="input-number" type="number" min="0">
+                <input class="input-number" type="number" min="0">
+            </div>
+        </div>
+
+        <div class="document-el type-1">
+            <label class="grayed">Zaświadczenie z banku o wysokości zadłużenia (nieruchomość obciążona
+                kredytem);</label>
+            <div class="input-wrap">
+                <input class="input-number" type="number" min="0">
+                <input class="input-number" type="number" min="0">
+            </div>
+        </div>
+
+        <div class="document-el type-1">
+            <label class="grayed">Zgoda banku na wykreślenie hipotek (kredyt spłacony);</label>
+            <div class="input-wrap">
+                <input class="input-number" type="number" min="0">
+                <input class="input-number" type="number" min="0">
+            </div>
+        </div>
+
+        <div class="document-el type-1">
+            <label class="grayed">Zaświadczenie o zameldowaniu na pobyt stały</label>
+            <div class="input-wrap">
+                <input class="input-number" type="number" min="0">
+                <input class="input-number" type="number" min="0">
+            </div>
+        </div>
+
+        <div class="document-el type-1">
+            <label class="grayed">Odpis skrócony aktu małżeństwa</label>
+            <div class="input-wrap">
+                <input class="input-number" type="number" min="0">
+                <input class="input-number" type="number" min="0">
+            </div>
+        </div>
+
+        <div class="document-el type-1">
+            <label class="grayed">Odpis skrócony aktu urodzenia</label>
+            <div class="input-wrap">
+                <input class="input-number" type="number" min="0">
+                <input class="input-number" type="number" min="0">
+            </div>
+        </div>
+
+        <div class="document-el type-1">
+            <label class="grayed">Odpis skrócony aktu zgonu</label>
+            <div class="input-wrap">
+                <input class="input-number" type="number" min="0">
+                <input class="input-number" type="number" min="0">
+            </div>
+        </div>
+
+        <div class="document-el type-1">
+            <label class="grayed">Dane osobowe z dokumentu tożsamości: imiona, nazwiska, imiona rodziców, adres stałego
+                zamieszkania z kodem pocztowym, nr i termin ważności dowodu osobistego, PESEL; </label>
+            <div class="input-wrap">
+                <input class="input-number" type="number" min="0">
+                <input class="input-number" type="number" min="0">
+            </div>
+        </div>
+
+        <div class="document-el type-1">
+            <label class="grayed">Stan cywilny i ustrój majątkowy z daty nabycia i zbycia każdej ze stron
+                umowy, </label>
+            <div class="input-wrap">
+                <input class="input-number" type="number" min="0">
+                <input class="input-number" type="number" min="0">
+            </div>
+        </div>
+
+        <div class="document-el type-1">
+            <label class="grayed">Tel. kontaktowy do drugiej strony czynności (jeśli dotyczy)</label>
+            <div class="input-wrap">
+                <input class="input-number" type="number" min="0">
+                <input class="input-number" type="number" min="0">
+            </div>
+        </div>
+
+        <div class="document-el type-1">
+            <label class="grayed">Wartość nieruchomości/Cena</label>
+            <div class="input-wrap">
+                <input class="input-number" type="number" min="0">
+                <input class="input-number" type="number" min="0">
+            </div>
+        </div>
+
+        <div class="document-el type-1">
+            <label class="grayed">Zaświadczenie z biura meldunkowego o braku osób zameldowanych (jeśli chcą
+                nabywcy).</label>
+            <div class="input-wrap">
+                <input class="input-number" type="number" min="0">
+                <input class="input-number" type="number" min="0">
+            </div>
+        </div>
     </div>
-    <div class="list"> <span>2.</span>
 
-        <input type="text">
-    </div>
-    <div class="list"> <span>3.</span>
-
-        <input type="text">
-    </div>
-    <div class="list"> <span>4.</span>
-
-        <input type="text">
-    </div>
-    <div class="list"> <span>5.</span>
-
-        <input type="text">
-    </div>
-    <div class="list"> <span>6.</span>
-
-        <input type="text">
-    </div>
-    <div class="list"> <span>7.</span>
-
-        <input type="text">
-    </div>
-    <div class="list"> <span>8.</span>
-
-        <input type="text">
-    </div>
-    <div class="list"> <span>9.</span>
-
-        <input type="text">
-    </div>
-    <div class="list"> <span>10.</span>
-
-        <input type="text">
-    </div>
+    <a class="btn-class back" href="/index.html">Wróć</a>
 </div>
+
+<script src="./dist/assets/js/libs/jquery.js"></script>
+<script src="./dist/assets/js/common.js"></script>
+

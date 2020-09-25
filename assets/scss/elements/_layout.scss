@@ -166,10 +166,10 @@ form {
   }
 
   .smaller-label{
-    &.active{
-      font-size: 11px;
-      min-width: 70px;
-    }
+    padding: 3px 6px;
+    font-size: 11px;
+    min-width: 70px;
+    margin-right: 10px;
   }
 
   input:checked + label {
@@ -269,6 +269,9 @@ form {
 
   .date-input{
     width: 200px;
+    &::placeholder{
+      color: #9b9b9b;
+    }
   }
 
   .changeinput {
@@ -279,10 +282,21 @@ form {
 }
 
 .nextDiv{
+  flex-direction: column;
+  margin-bottom: 30px;
+  //border: 1px solid $aux;
+  padding: 30px 20px;
+  box-shadow: 5px 5px 20px -5px $main--light-darker;
+
   .label-span{
     font-weight: bold;
     color: $aux;
   }
+
+  button{
+    margin-bottom: 0px;
+  }
+
 }
 .date {
   margin: 10px 0 0 !important;
@@ -292,7 +306,7 @@ form {
   }
 }
 
-.if-1, .other, .if-2, .other-object, .if-3, .if-4, .account, .date, .if-5, .if-6, .ukur, .if-7, .if-8, .if-9, .nextDiv, .documents, .title-el, .type-1 {
+.if-akt, .other, .if-przedmiot-caller, .other-object, .if-withprice, .if-withvalue, .account, .date, .if-withcredit, .if-6, .if-ukur, .ukur, .if-tax, .if-othertax, .if-charge, .nextDiv, .documents {
   display: none;
 }
 
@@ -405,8 +419,25 @@ form {
   label{
     margin-bottom: 0;
     width: 74%;
+    color: $main--dark;
     &.grayed{
       color: #9b9b9b;
     }
+  }
+}
+
+.documents-limiter{
+  display: flex;
+  max-width: 1100px;
+  width: 80%;
+  padding: 25px;
+  flex-direction: column;
+  align-items: flex-end;
+  background-color: white;
+  margin: 30px auto;
+  border-radius: 10px;
+
+  .document-el{
+    display: flex;
   }
 }

@@ -3,29 +3,46 @@ app.common = {
         let text = 'ES6 is working';
 
         $('.quest-initial #akt').click(function () {
-            $('.if-1').slideDown();
+            $('.if-akt').slideDown();
             $('.documents').slideUp();
         });
         $('.quest-initial #poswiadczenie').click(function () {
             $('.documents').slideDown();
-            $('.if-1').slideUp();
-            $('.if-2').slideUp();
+            $('.if-akt').slideUp();
+            $('.if-przedmiot-caller').slideUp();
             $('.other-object').slideUp();
             $('.if-6').slideUp();
-            $('.if-3').slideUp();
+            $('.if-withprice').slideUp();
             $('.account').slideUp();
             $('.nextDiv').slideUp();
-            $('.if-4').slideUp();
-            $('.if-5').slideUp();
+            $('.if-withvalue').slideUp();
+            $('.if-withcredit').slideUp();
+            $('.if-ukur').slideUp();
             $('.ukur').slideUp();
-            $('.if-7').slideUp();
-            $('.if-8').slideUp();
-            $('.if-9').slideUp();
+            $('.if-tax').slideUp();
+            $('.if-othertax').slideUp();
+            $('.if-charge').slideUp();
             $('.other-doc').slideUp();
             $('.comments').slideUp();
         });
         $('.quest-initial #inne').click(function () {
-            $('.if-1').slideUp();
+            $('.documents').slideDown();
+            $('.if-akt').slideUp();
+            $('.if-przedmiot-caller').slideUp();
+            $('.other-object').slideUp();
+            $('.if-6').slideUp();
+            $('.if-withprice').slideUp();
+            $('.account').slideUp();
+            $('.nextDiv').slideUp();
+            $('.if-withvalue').slideUp();
+            $('.if-withcredit').slideUp();
+            $('.if-ukur').slideUp();
+            $('.ukur').slideUp();
+            $('.if-tax').slideUp();
+            $('.if-othertax').slideUp();
+            $('.if-charge').slideUp();
+            $('.other-doc').slideUp();
+            $('.comments').slideUp();
         });
 
 
@@ -34,39 +51,39 @@ app.common = {
 
             if (iscaller == "yes") {
                 $('.other').slideUp();
-                $('.if-2').slideDown();
+                $('.if-przedmiot-caller').slideDown();
             }
             else if (iscaller == "other") {
-                $('.if-2').slideUp();
+                $('.if-przedmiot-caller').slideUp();
                 $('.other').slideDown().css('display','flex');
             }
             else {
-                $('.if-2').slideUp();
+                $('.if-przedmiot-caller').slideUp();
                 $('.other').slideUp();
             }
 
             var selected = $(this).find(':selected');
             var price = selected.data('price');
             if (price == "yes") {
-                $('.if-4').slideUp();
-                $('.if-3').slideDown().css('display', 'flex');
+                $('.if-withvalue').slideUp();
+                $('.if-withprice').slideDown().css('display', 'flex');
             }
             else if (price == "value") {
-                $('.if-3, .nextDiv').slideUp();
-                $('.if-4').slideDown();
+                $('.if-withprice, .nextDiv').slideUp();
+                $('.if-withvalue').slideDown();
             }
             else {
-                $('.if-3').slideUp();
-                $('.if-3, .nextDiv').slideUp();
-                $('.if-4').slideUp();
+                $('.if-withprice').slideUp();
+                $('.if-withprice, .nextDiv').slideUp();
+                $('.if-withvalue').slideUp();
             }
 
             var credit = selected.data('credit');
             if (credit == "yes") {
-                $('.if-5').slideDown().css('display', 'flex');
+                $('.if-withcredit').slideDown().css('display', 'flex');
             }
             else {
-                $('.if-5').slideUp();
+                $('.if-withcredit').slideUp();
             }
 
             var duty = selected.data('duty');
@@ -77,47 +94,38 @@ app.common = {
                 $('.if-6').slideUp();
             }
 
-            var tax = selected.data('tax');
-            if (tax == "yes") {
-                $('.if-7').slideDown().css('display', 'flex');
+            var ukur = selected.data('ukur');
+            if (ukur == "yes") {
+                $('.if-ukur').slideDown().css('display', 'flex');
             }
             else {
-                $('.if-7').slideUp();
+                $('.if-ukur').slideUp();
+                $('.ukur').slideUp();
+
+            }
+
+            var tax = selected.data('tax');
+            if (tax == "yes") {
+                $('.if-tax').slideDown().css('display', 'flex');
+            }
+            else {
+                $('.if-tax').slideUp();
             }
 
             var othertax = selected.data('othertax');
             if (othertax == "yes") {
-                $('.if-8').slideDown().css('display', 'flex');
+                $('.if-othertax').slideDown().css('display', 'flex');
             }
             else {
-                $('.if-8').slideUp();
+                $('.if-othertax').slideUp();
             }
 
             var charge = selected.data('charge');
             if (charge == "yes") {
-                $('.if-9').slideDown().css('display', 'flex');
+                $('.if-charge').slideDown().css('display', 'flex');
             }
             else {
-                $('.if-9').slideUp();
-            }
-
-            var sale = selected.data('sale');
-            var liNoSale = $('.no-sale').parent('li');
-            var liSale = $('.sale').parent('li');
-
-            if (sale == "yes") {
-                liSale.css('display', 'block');
-                liNoSale.css('display', 'none');
-
-                $('.przedaktem').slideDown();
-                $('.smaller-label').addClass('active');
-            }
-            else {
-                liSale.css('display', 'none');
-                liNoSale.css('display', 'block');
-
-                $('.przedaktem').slideUp();
-                $('.smaller-label').removeClass('active');
+                $('.if-charge').slideUp();
             }
         });
 
@@ -141,7 +149,11 @@ app.common = {
         });
 
         $("#ukur").change(function () {
-            if(this.checked) {
+
+            var selected = $("#select-type").find(':selected');
+            var ukur = selected.data('ukur');
+
+            if(this.checked && ukur == "yes") {
                 $('.ukur').slideDown().css('display', 'flex');
             }
             else {
@@ -186,23 +198,23 @@ app.common = {
             $('.next-final').slideDown().css('display', 'flex');
         });
 
-        $('#przelew').click(function () {
-            $('.account').slideDown().css('display', 'flex');
+        $('.przelew').click(function () {
+            $(this).parent().siblings('.account').slideDown().css('display', 'flex');
         });
 
-        $('#gotowka').click(function () {
-            $('.account').slideUp();
+        $('.gotowka').click(function () {
+            $(this).parent().siblings('.account').slideUp();
         });
 
 
-        $('.inny').click(function () {
-            var dateDiv = $(this).data('date');
-            $('#' + dateDiv).slideDown().css('display', 'flex');
-        });
-        $('.tensam').click(function () {
-            var dateDiv = $(this).data('date');
-            $('#' + dateDiv).slideUp();
-        });
+        // $('.inny').click(function () {
+        //     var dateDiv = $(this).data('date');
+        //     $('#' + dateDiv).slideDown().css('display', 'flex');
+        // });
+        // $('.tensam, .przedaktem').click(function () {
+        //     var dateDiv = $(this).data('date');
+        //     $('#' + dateDiv).slideUp();
+        // });
 
         $("#sposobnieznany").change(function () {
             if(this.checked) {
@@ -222,15 +234,13 @@ app.common = {
             var inputValue = $(this).val();
             var inputValueIs = $(this).siblings('.input-number').val();
 
-            console.log('inputValue = ' + inputValue);
-            console.log('inputValueIs = ' + inputValueIs);
-
             if ((inputValue == "0" || inputValue == "") && (inputValueIs == "0" || inputValueIs == "")) {
                 $(this).parent().parent().find('label').addClass('grayed');
             } else {
                 $(this).parent().parent().find('label').removeClass('grayed');
             }
         });
+
     }
 }
 

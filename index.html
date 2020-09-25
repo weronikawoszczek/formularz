@@ -22,7 +22,6 @@
     </head>
     
     <body>
-        <!---->
         <div class="page-limiter">
             <form>
                  <h3>formularz</h3>
@@ -50,38 +49,40 @@
                     <label>Numer telefonu do klienta</label>
                     <input type="text">
                 </div>
-                <div class="form-input if-1">
+                <div class="form-input if-akt">
                     <label>Typ aktu</label>
                     <select class="form-control selectpicker" id="select-type"
                     data-live-search="true">
                         <option selected disabled value="no">Wybierz</option>
                         <option value="yes" data-price="yes" data-credit="yes"
-                        data-duty="yes" data-tax="yes" data-charge="yes" data-sale="yes">Sprzedaż</option>
+                        data-duty="yes" data-ukur="yes" data-tax="yes" data-charge="yes" data-sale="yes">Sprzedaż</option>
                         <option value="yes" data-price="yes" data-credit="yes"
-                        data-duty="yes" data-tax="yes" data-charge="yes">Przedwstępna sprzedaż</option>
+                        data-duty="yes" data-ukur="yes" data-tax="yes" data-charge="yes">Przedwstępna sprzedaż</option>
                         <option value="yes" data-price="yes" data-credit="yes"
-                        data-duty="yes" data-tax="yes" data-charge="yes">Warunkowa sprzedaż</option>
+                        data-duty="yes" data-ukur="yes" data-tax="yes" data-charge="yes">Warunkowa sprzedaż</option>
                         <option value="yes" data-price="yes" data-credit="yes"
-                        data-duty="no" data-tax="yes" data-charge="yes">Przeniesienie własności</option>
+                        data-duty="yes" data-ukur="no" data-tax="yes" data-charge="yes">Przeniesienie własności</option>
                         <option value="yes" data-price="value"
-                        data-duty="yes" data-othertax="yes">Darowizna</option>
+                        data-duty="yes" data-ukur="yes" data-othertax="yes">Darowizna</option>
                         <option value="yes" data-price="yes" data-duty="yes"
-                        data-tax="yes" data-othertax="yes" data-charge="yes">Dział spadku</option>
+                        data-ukur="yes" data-tax="yes" data-othertax="yes" data-charge="yes">Dział spadku</option>
                         <option value="yes" data-price="yes" data-duty="yes"
-                        data-tax="yes" data-othertax="yes" data-charge="yes">Dział spadku + zniesienie własności</option>
+                        data-ukur="yes" data-tax="yes" data-othertax="yes" data-charge="yes">Dział spadku + zniesienie własności</option>
                         <option value="yes" data-price="yes"
-                        data-duty="yes" data-tax="yes" data-othertax="yes" data-charge="yes">Zniesienie współwłasności</option>
-                        <option value="no" data-price="no" data-duty="no">Deweloperska</option>
-                        <option value="no" data-price="no" data-duty="no">Ustanowienie odrębnej własności</option>
+                        data-duty="yes" data-ukur="yes" data-tax="yes" data-othertax="yes" data-charge="yes">Zniesienie współwłasności</option>
+                        <option value="no" data-price="no" data-duty="no"
+                        data-ukur="no">Deweloperska</option>
+                        <option value="no" data-price="no" data-duty="no"
+                        data-ukur="no">Ustanowienie odrębnej własności</option>
                         <option value="no" data-price="no"
-                        data-duty="no">APD</option>
-                        <option value="yes" data-price="yes" data-duty="yes">Umowa majątkowa małżeńska</option>
+                        data-duty="no" data-ukur="no">APD</option>
+                        <option value="yes" data-price="yes" data-duty="yes" data-ukur="yes">Umowa majątkowa małżeńska</option>
                         <option value="yes" data-price="yes"
-                        data-duty="yes" data-tax="yes" data-charge="yes">UMM + podział majątku</option>
+                        data-duty="yes" data-ukur="yes" data-tax="yes" data-charge="yes">UMM + podział majątku</option>
                         <option value="yes" data-price="yes" data-duty="yes"
-                        data-tax="yes" data-charge="yes">Podział majątku</option>
+                        data-ukur="yes" data-tax="yes" data-charge="yes">Podział majątku</option>
                         <option value="yes" data-price="yes" data-duty="yes"
-                        data-charge="yes">Dożywocie</option>
+                        data-ukur="yes" data-charge="yes">Dożywocie</option>
                         <option value="no" data-price="no" data-duty="no">Protokół spółki</option>
                         <option value="no" data-price="no" data-duty="no">Pełnomocnictwo</option>
                         <option value="no" data-price="no" data-duty="no">Odrzucenie spadku</option>
@@ -92,7 +93,7 @@
                     <label>Podaj typ aktu</label>
                     <input type="text">
                 </div>
-                <div class="form-input if-2">
+                <div class="form-input if-przedmiot-caller">
                     <label>Przedmiot umowy</label>
                     <select class="form-control selectpicker" id="selectobject"
                     data-live-search="true">
@@ -116,14 +117,14 @@
                     <label>Podaj przedmiot umowy</label>
                     <input type="text">
                 </div>
-                <div class="form-input nomargin if-6">
+                <div class="form-input nomargin if-ukur">
                     <div class="form-input row">
                         <input class="checkbox-input" type="checkbox" id="ukur" name="nieznana"
                         value="nieznana">
                         <label class="nomargin" for="ukur">Podlega UKUR</label>
                     </div>
                 </div>
-                <div class="form-input nomargin if-3">
+                <div class="form-input nomargin if-withprice">
                     <div class="form-input changeform">
                         <label class="cena changelabel" for="cena">Cena [zł]</label>
                         <input type="number" id="cena" class="changeinput" name="cena"
@@ -135,7 +136,7 @@
                         <label class="nomargin" for="cenanieznana">Cena nieznana</label>
                     </div>
                 </div>
-                <div class="form-input nomargin if-4">
+                <div class="form-input nomargin if-withvalue">
                     <div class="form-input changeform">
                         <label class="wartosc changelabel" for="wartosc">Wartość</label>
                         <input type="number" id="wartosc" class="changeinput" name="wartosc"
@@ -147,106 +148,210 @@
                         <label class="nomargin" for="wartoscnieznana">Wartość nieznana</label>
                     </div>
                 </div>
-                <div class="question if-3"> <span class="label-span">Płatność przelewem (w tym częściowa):</span>
+                <!--<div class="question if-withprice">-->
+                <!-- <span class="label-span">Płatność przelewem (w tym częściowa):</span>-->
+                <!-- <input type="radio" id="przelew" name="platnosc" value="przelew">-->
+                <!-- <label class="small" for="przelew">Tak</label>-->
+                <!-- <input type="radio" id="gotowka" name="platnosc" value="gotowka">-->
+                <!-- <label class="small" for="gotowka">Nie</label>-->
+                <!--</div>-->
+                <!--<div class="form-input account">-->
+                <!-- <label for="numer">Numer konta</label>-->
+                <!-- <input type="number" id="numer" name="numer" min="0">-->
+                <!--</div>-->
+                <div class="nextDiv if-withprice">
+                    <!-- <span class="label-span">Termin płatności <br>1 transzy:</span>-->
+                    <!-- <input type="radio" class="przedaktem" id="przedaktem" data-date="date-0"
+                    name="termin" value="przedaktem">-->
+                    <!-- <label class="smaller-label przedaktem" for="przedaktem">Przed aktem</label>-->
+                    <!-- <input type="radio" class="tensam" id="tensam" data-date="date-0"
+                    name="termin" value="tensam">-->
+                    <!-- <label class="smaller-label" for="tensam">W dniu aktu</label>-->
+                    <!-- <input type="radio" class="inny" id="inny-0" data-date="date-0" name="termin"
+                    value="inny">-->
+                    <!-- <label class="smaller-label" for="inny-0">Inny</label>-->
+                    <!-- <div class="form-input row date" id="date-0">-->
+                    <!-- <span for="example-date-input" class="label-span">Wpisz termin:</span>-->
+                    <!-- <input class="form-control date-input" type="text" placeholder="dd.mm.rrrr
+                    lub opisowo">-->
+                    <!-- </div>-->
+                    <div class="divider"></div>
+                    <div class="form-input other-doc">
+                        <label>Wysokość i termin transzy 1, na czyją rzecz</label>
+                        <textarea rows="5"></textarea>
+                    </div>
+                    <div class="question if-withprice"> <span class="label-span">Płatność przelewem:</span>
 
-                    <input
-                    type="radio" id="przelew" name="platnosc" value="przelew">
+                        <input type="radio"
+                        class="przelew" id="przelew" name="platnosc" value="przelew">
                         <label class="small" for="przelew">Tak</label>
-                        <input type="radio" id="gotowka" name="platnosc" value="gotowka">
+                        <input type="radio" class="gotowka" id="gotowka" name="platnosc"
+                        value="gotowka">
                         <label class="small" for="gotowka">Nie</label>
+                    </div>
+                    <div class="form-input account">
+                        <label for="numer">Numer konta</label>
+                        <input type="number" id="numer" name="numer" min="0">
+                    </div>
+                    <div class="form-input account">
+                        <label for="numer">Posiadacz konta</label>
+                        <input type="text" id="posiadacz" name="posiadacz">
+                    </div>
+                    <button type="button" class="btn-class add-next" data-next="next-1">Dodaj kolejną transzę</button>
                 </div>
-                <div class="form-input account">
-                    <label for="numer">Numer konta</label>
-                    <input type="number" id="numer" name="numer" min="0">
+                <div class="nextDiv" id="next-1">
+                    <!-- <span class="label-span">Termin płatności <br>2 transzy:</span>-->
+                    <!-- <input type="radio" class="tensam" id="tensam-1" data-date="date-1"
+                    name="termin-1" value="tensam">-->
+                    <!-- <label class="small" for="tensam-1">W dniu aktu</label>-->
+                    <!-- <input type="radio" class="inny" id="inny-1" data-date="date-1" name="termin-1"
+                    value="inny">-->
+                    <!-- <label class="small" for="inny-1">Inny</label>-->
+                    <!-- <div class="form-input row date" id="date-1">-->
+                    <!-- <span for="example-date-input" class="label-span">Wybierz termin:</span>-->
+                    <!-- <input class="form-control date-input" type="text" placeholder="dd.mm.rrrr
+                    lub opisowo">-->
+                    <!-- </div>-->
+                    <div class="form-input other-doc">
+                        <label>Wysokość i termin transzy 2, na czyją rzecz</label>
+                        <textarea rows="5"></textarea>
+                    </div>
+                    <div class="question if-withprice"> <span class="label-span">Płatność przelewem:</span>
+
+                        <input type="radio"
+                        class="przelew" id="przelew2" name="platnosc2" value="przelew">
+                        <label class="small" for="przelew2">Tak</label>
+                        <input type="radio" class="gotowka" id="gotowka2" name="platnosc2"
+                        value="gotowka">
+                        <label class="small" for="gotowka2">Nie</label>
+                    </div>
+                    <div class="form-input account">
+                        <label for="numer">Numer konta</label>
+                        <input type="number" id="numer2" name="numer" min="0">
+                    </div>
+                    <div class="form-input account">
+                        <label for="numer">Posiadacz konta</label>
+                        <input type="text" id="posiadacz2" name="posiadacz">
+                    </div>
+                    <button type="button" class="btn-class add-next" data-next="next-2">Dodaj kolejną transzę</button>
                 </div>
-                <div class="question nextDiv if-3"> <span class="label-span">Termin płatności <br>1 transzy:</span>
+                <div class="nextDiv" id="next-2">
+                    <!-- <span class="label-span">Termin płatności <br>3 transzy:</span>-->
+                    <!-- <input type="radio" class="tensam" id="tensam-2" data-date="date-2"
+                    name="termin-2" value="tensam">-->
+                    <!-- <label class="small" for="tensam-2">W dniu aktu</label>-->
+                    <!-- <input type="radio" class="inny" id="inny-2" data-date="date-2" name="termin-2"
+                    value="inny">-->
+                    <!-- <label class="small" for="inny-2">Inny</label>-->
+                    <!-- <div class="form-input row date" id="date-2">-->
+                    <!-- <span for="example-date-input" class="label-span">Wybierz termin:</span>-->
+                    <!-- <input class="form-control date-input" type="text" placeholder="dd.mm.rrrr
+                    lub opisowo">-->
+                    <!-- </div>-->
+                    <div class="form-input other-doc">
+                        <label>Wysokość i termin transzy 3, na czyją rzecz</label>
+                        <textarea rows="5"></textarea>
+                    </div>
+                    <div class="question if-withprice"> <span class="label-span">Płatność przelewem:</span>
 
-                    <input
-                    type="radio" class="przedaktem" id="przedaktem" data-date="date-0" name="termin"
-                    value="przedaktem">
-                        <label class="small smaller-label przedaktem" for="przedaktem">Przed aktem</label>
-                        <input type="radio" class="tensam" id="tensam" data-date="date-0"
-                        name="termin" value="tensam">
-                        <label class="small smaller-label" for="tensam">W dniu aktu</label>
-                        <input type="radio" class="inny" id="inny-0" data-date="date-0"
-                        name="termin" value="inny">
-                        <label class="small smaller-label" for="inny-0">Inny</label>
-                        <div class="form-input row date" id="date-0"> <span for="example-date-input" class="label-span">Wybierz termin:</span>
-
-                            <input
-                            class="form-control date-input" type="date" value="2011-08-19" id="example-date-input">
-                        </div>
-                        <button type="button" class="btn-class add-next" data-next="next-1">Dodaj termin płatności kolejnej transzy</button>
+                        <input type="radio"
+                        class="przelew" id="przelew3" name="platnosc3" value="przelew">
+                        <label class="small" for="przelew2">Tak</label>
+                        <input type="radio" class="gotowka" id="gotowka3" name="platnosc3"
+                        value="gotowka">
+                        <label class="small" for="gotowka2">Nie</label>
+                    </div>
+                    <div class="form-input account">
+                        <label for="numer">Numer konta</label>
+                        <input type="number" id="numer3" name="numer" min="0">
+                    </div>
+                    <div class="form-input account">
+                        <label for="numer">Posiadacz konta</label>
+                        <input type="text" id="posiadacz3" name="posiadacz">
+                    </div>
+                    <button type="button" class="btn-class add-next" data-next="next-3">Dodaj kolejną transzę</button>
                 </div>
-                <div class="question nextDiv" id="next-1"> <span class="label-span">Termin płatności <br>2 transzy:</span>
+                <div class="nextDiv" id="next-3">
+                    <!-- <span class="label-span">Termin płatności <br>4 transzy:</span>-->
+                    <!-- <input type="radio" class="tensam" id="tensam-3" data-date="date-3"
+                    name="termin-3" value="tensam">-->
+                    <!-- <label class="small" for="tensam-3">W dniu aktu</label>-->
+                    <!-- <input type="radio" class="inny" id="inny-3" data-date="date-3" name="termin-3"
+                    value="inny">-->
+                    <!-- <label class="small" for="inny-3">Inny</label>-->
+                    <!-- <div class="form-input row date" id="date-3">-->
+                    <!-- <span for="example-date-input" class="label-span">Wybierz termin:</span>-->
+                    <!-- <input class="form-control date-input" type="text" placeholder="dd.mm.rrrr
+                    lub opisowo">-->
+                    <!-- </div>-->
+                    <div class="form-input other-doc">
+                        <label>Wysokość i termin transzy 4, na czyją rzecz</label>
+                        <textarea rows="5"></textarea>
+                    </div>
+                    <div class="question if-withprice"> <span class="label-span">Płatność przelewem:</span>
 
-                    <input
-                    type="radio" class="tensam" id="tensam-1" data-date="date-1" name="termin-1"
-                    value="tensam">
-                        <label class="small" for="tensam-1">W dniu aktu</label>
-                        <input type="radio" class="inny" id="inny-1" data-date="date-1"
-                        name="termin-1" value="inny">
-                        <label class="small" for="inny-1">Inny</label>
-                        <div class="form-input row date" id="date-1"> <span for="example-date-input" class="label-span">Wybierz termin:</span>
-
-                            <input
-                            class="form-control date-input" type="date" value="2011-08-19" id="example-date-input-1">
-                        </div>
-                        <button type="button" class="btn-class add-next" data-next="next-2">Dodaj termin płatności kolejnej transzy</button>
+                        <input type="radio"
+                        class="przelew" id="przelew4" name="platnosc4" value="przelew">
+                        <label class="small" for="przelew2">Tak</label>
+                        <input type="radio" class="gotowka" id="gotowka4" name="platnosc4"
+                        value="gotowka">
+                        <label class="small" for="gotowka2">Nie</label>
+                    </div>
+                    <div class="form-input account">
+                        <label for="numer">Numer konta</label>
+                        <input type="number" id="numer4" name="numer" min="0">
+                    </div>
+                    <div class="form-input account">
+                        <label for="numer">Posiadacz konta</label>
+                        <input type="text" id="posiadacz4" name="posiadacz">
+                    </div>
+                    <button type="button" class="btn-class add-next" data-next="next-4">Dodaj kolejną transzę</button>
                 </div>
-                <div class="question nextDiv" id="next-2"> <span class="label-span">Termin płatności <br>3 transzy:</span>
+                <div class="nextDiv" id="next-4">
+                    <!-- <span class="label-span">Termin płatności <br>5 transzy:</span>-->
+                    <!-- <input type="radio" class="tensam" id="tensam-4" data-date="date-4"
+                    name="termin-4" value="tensam">-->
+                    <!-- <label class="small" for="tensam-4">W dniu aktu</label>-->
+                    <!-- <input type="radio" class="inny" id="inny-4" data-date="date-4" name="termin-4"
+                    value="inny">-->
+                    <!-- <label class="small" for="inny-4">Inny</label>-->
+                    <!-- <div class="form-input row date" id="date-4">-->
+                    <!-- <span for="example-date-input" class="label-span">Wybierz termin:</span>-->
+                    <!-- <input class="form-control date-input" type="text" placeholder="dd.mm.rrrr
+                    lub opisowo">-->
+                    <!-- </div>-->
+                    <div class="form-input other-doc">
+                        <label>Wysokość i termin transzy 5, na czyją rzecz</label>
+                        <textarea rows="5"></textarea>
+                    </div>
+                    <div class="question if-withprice"> <span class="label-span">Płatność przelewem:</span>
 
-                    <input
-                    type="radio" class="tensam" id="tensam-2" data-date="date-2" name="termin-2"
-                    value="tensam">
-                        <label class="small" for="tensam-2">W dniu aktu</label>
-                        <input type="radio" class="inny" id="inny-2" data-date="date-2"
-                        name="termin-2" value="inny">
-                        <label class="small" for="inny-2">Inny</label>
-                        <div class="form-input row date" id="date-2"> <span for="example-date-input" class="label-span">Wybierz termin:</span>
-
-                            <input
-                            class="form-control date-input" type="date" value="2011-08-19" id="example-date-input-2">
-                        </div>
-                        <button type="button" class="btn-class add-next" data-next="next-3">Dodaj termin płatności kolejnej transzy</button>
+                        <input type="radio"
+                        class="przelew" id="przelew5" name="platnosc5" value="przelew">
+                        <label class="small" for="przelew2">Tak</label>
+                        <input type="radio" class="gotowka" id="gotowka5" name="platnosc5"
+                        value="gotowka">
+                        <label class="small" for="gotowka2">Nie</label>
+                    </div>
+                    <div class="form-input account">
+                        <label for="numer">Numer konta</label>
+                        <input type="number" id="numer5" name="numer" min="0">
+                    </div>
+                    <div class="form-input account">
+                        <label for="numer">Posiadacz konta</label>
+                        <input type="text" id="posiadacz5" name="posiadacz">
+                    </div>
+                    <button type="button" class="btn-class add-next-final">Dodaj kolejną transzę</button>
                 </div>
-                <div class="question nextDiv" id="next-3"> <span class="label-span">Termin płatności <br>4 transzy:</span>
-
-                    <input
-                    type="radio" class="tensam" id="tensam-3" data-date="date-3" name="termin-3"
-                    value="tensam">
-                        <label class="small" for="tensam-3">W dniu aktu</label>
-                        <input type="radio" class="inny" id="inny-3" data-date="date-3"
-                        name="termin-3" value="inny">
-                        <label class="small" for="inny-3">Inny</label>
-                        <div class="form-input row date" id="date-3"> <span for="example-date-input" class="label-span">Wybierz termin:</span>
-
-                            <input
-                            class="form-control date-input" type="date" value="2011-08-19" id="example-date-input-3">
-                        </div>
-                        <button type="button" class="btn-class add-next" data-next="next-4">Dodaj termin płatności kolejnej transzy</button>
+                <div class="nextDiv next-final">
+                    <div class="form-input">
+                        <label>Wysokość i termin transzy, na czyją rzecz, sposób płatności,
+                            <br>(w przypadku przelewu: numer konta, posiadacz konta)</label>
+                        <textarea
+                        rows="6"></textarea>
+                    </div>
                 </div>
-                <div class="question nextDiv" id="next-4"> <span class="label-span">Termin płatności <br>5 transzy:</span>
-
-                    <input
-                    type="radio" class="tensam" id="tensam-4" data-date="date-4" name="termin-4"
-                    value="tensam">
-                        <label class="small" for="tensam-4">W dniu aktu</label>
-                        <input type="radio" class="inny" id="inny-4" data-date="date-4"
-                        name="termin-4" value="inny">
-                        <label class="small" for="inny-4">Inny</label>
-                        <div class="form-input row date" id="date-4"> <span for="example-date-input" class="label-span">Wybierz termin:</span>
-
-                            <input
-                            class="form-control date-input" type="date" value="2011-08-19" id="example-date-input-4">
-                        </div>
-                        <button type="button" class="btn-class add-next-final">Dodaj termin płatności kolejnej transzy</button>
-                </div>
-                <div class="form-input nextDiv next-final">
-                    <label class="label-span">Termin płatności kolejnych transzy:</label>
-                    <textarea rows="4"></textarea>
-                </div>
-                <div class="question if-5"> <span class="label-span">Kredyt</span>
+                <div class="question if-withcredit"> <span class="label-span">Kredyt</span>
 
                     <input type="radio" id="tak" name="kredyt"
                     value="tak">
@@ -256,7 +361,7 @@
                     <input type="radio" id="niewiadomo" name="kredyt" value="niewiadomo">
                     <label class="small" for="niewiadomo">Nie wiadomo</label>
                 </div>
-                <div class="form-input nomargin if-3">
+                <div class="form-input nomargin if-6">
                     <div class="form-input changeform">
                         <label class="sposob changelabel" for="sposob">Sposób wydania</label>
                         <input type="text" id="sposob" class="changeinput"
@@ -268,7 +373,30 @@
                         <label class="nomargin" for="sposobnieznany">Nieznany sposób wydania</label>
                     </div>
                 </div>
-                <div class="question column if-3"> <span class="label-span">Sprawdzono pierwokupy i prawa nabycia za równowartość</span>
+                <div class="question if-withprice"> <span class="label-span">Ustanowienie hipoteki</span>
+
+                    <input type="radio"
+                    id="takhipoteka" name="hipoteka" value="tak">
+                    <label class="smaller" for="takhipoteka">Tak</label>
+                    <input type="radio" id="niehipoteka" name="hipoteka" value="nie">
+                    <label class="smaller" for="niehipoteka">Nie</label>
+                    <input type="radio" id="niedotyczyhipoteka" name="hipoteka"
+                    value="niedotyczy">
+                    <label class="small" for="niedotyczyhipoteka">Nie dotyczy</label>
+                </div>
+                <div class="question if-withprice"> <span class="label-span">Roszczenie o przeniesienie hipoteki</span>
+
+                    <input
+                    type="radio" id="takprzeniesienie" name="przeniesienie" value="tak">
+                        <label class="smaller" for="takprzeniesienie">Tak</label>
+                        <input type="radio" id="nieprzeniesienie" name="przeniesienie"
+                        value="nie">
+                        <label class="smaller" for="nieprzeniesienie">Nie</label>
+                        <input type="radio" id="niedotyczyprzeniesienie" name="przeniesienie"
+                        value="niedotyczyprzeniesienie">
+                        <label class="small" for="niedotyczyprzeniesienie">Nie dotyczy</label>
+                </div>
+                <div class="question column if-6"> <span class="label-span">Sprawdzono pierwokupy i prawa nabycia za równowartość (również podstawę nabycia)</span>
 
                     <div
                     class="question">
@@ -306,7 +434,7 @@
                 <label class="smaller" for="brakobowiazku">Nie</label>
             </div>
         </div>
-        <div class="question column if-7"> <span class="label-span">Podatek dochodowy</span>
+        <div class="question column if-tax"> <span class="label-span">Podatek dochodowy</span>
 
             <div class="question">
                 <input type="radio" id="podatek" name="podatek" value="podatek">
@@ -315,7 +443,7 @@
                 <label class="smaller" for="brakpodatku">Nie</label>
             </div>
         </div>
-        <div class="question column if-8"> <span class="label-span">Podatek PCC</span>
+        <div class="question column if-othertax"> <span class="label-span">Podatek PCC</span>
 
             <div class="question">
                 <input type="radio" id="podatekPCC" name="podatekPCC" value="podatekPCC">
@@ -324,7 +452,7 @@
                 <label class="smaller" for="brakpodatkuPCC">Nie</label>
             </div>
         </div>
-        <div class="question column if-8"> <span class="label-span">Podatek SD</span>
+        <div class="question column if-othertax"> <span class="label-span">Podatek SD</span>
 
             <div class="question">
                 <input type="radio" id="podatekSD" name="podatekSD" value="podatekSD">
@@ -333,7 +461,7 @@
                 <label class="smaller" for="brakpodatkuSD">Nie</label>
             </div>
         </div>
-        <div class="question column if-9"> <span class="label-span">Opłata planistyczna</span>
+        <div class="question column if-charge"> <span class="label-span">Opłata planistyczna</span>
 
             <div class="question">
                 <input type="radio" id="oplata" name="oplata" value="oplata">
@@ -341,174 +469,10 @@
                 <input type="radio" id="brakoplaty" name="oplata" value="brakoplaty">
                 <label class="smaller" for="brakoplaty">Nie</label>
             </div>
-        </div>
-        <div class="form-input documents-list">
-            <div class="document-el title-el">
-                <label for="doc-1">Nazwa dokumentu</label>
-                <div class="input-wrap"> <span class="input-title label-span">Potrzeba</span>
- <span class="input-title label-span">Jest</span>
+        </div> <a class="btn-class alert" href="/documents.html">Lista dokumentow</a>
 
-                </div>
-            </div>
-            <div class="document-el type-1">
-                <label class="grayed" for="doc-1">Numer księgi wieczystej lub Odpis z księgi wieczystej - Sąd Rejonowy</label>
-                <div
-                class="input-wrap">
-                    <input class="input-number" type="number" id="doc-1" name="doc1" min="0">
-                    <input class="input-number" type="number" id="doc-1-1" name="doc1" min="0">
-            </div>
-        </div>
-        <div class="document-el type-1">
-            <label class="grayed" for="doc-2">Zaświadczenie od zarządcy nieruch. wspólnej
-                <br>o braku zaległości w opłatach</label>
-            <div class="input-wrap">
-                <input class="input-number" type="number" id="doc-2" name="doc1" min="0">
-                <input class="input-number" type="number" id="doc-2-1" name="doc1" min="0">
-            </div>
-        </div>
-        <div class="document-el type-1">
-            <label class="grayed" for="doc-3">Wypis z rejestru gruntów z wypisem z kartoteki budynków (lokal stanowiący
-                odrębną nieruchomość) - Starostwo Powiatowe</label>
-            <div class="input-wrap">
-                <input class="input-number" type="number" id="doc-3" name="doc1" min="0">
-                <input class="input-number" type="number" id="doc-3-1" name="doc1" min="0">
-            </div>
-        </div>
-        <div class="document-el type-1">
-            <label class="grayed">Podstawa nabycia nieruchomości ( akt notarialny, postanowienie, przydział
-                lokalu)</label>
-            <div class="input-wrap">
-                <input class="input-number" type="number" min="0">
-                <input class="input-number" type="number" min="0">
-            </div>
-        </div>
-        <div class="document-el type-1">
-            <label class="grayed">Prawomocne postanowienie Sądu
-                <br>o stwierdzeniu nabycia spadku lub akt poświadczenia dziedziczenia</label>
-            <div
-            class="input-wrap">
-                <input class="input-number" type="number" min="0">
-                <input class="input-number" type="number" min="0">
-        </div>
-        </div>
-        <div class="document-el type-1">
-            <label class="grayed">Prawomocne postanowienie Sądu dział spadku i/lub zniesienie współwłasności</label>
-            <div
-            class="input-wrap">
-                <input class="input-number" type="number" min="0">
-                <input class="input-number" type="number" min="0">
-        </div>
-        </div>
-        <div class="document-el type-1">
-            <label class="grayed">Zaświadczenie z Urzędu Skarbowego o uregulowanym podatku (od spadku-zawsze;
-                <br>od darowizny lub nieodpłatnego zniesienia współwłasności po 01.01.2007
-                r.)</label>
-            <div class="input-wrap">
-                <input class="input-number" type="number" min="0">
-                <input class="input-number" type="number" min="0">
-            </div>
-        </div>
-        <div class="document-el type-1">
-            <label class="grayed">Zaświadczenie z Urzędu Miasta/Gminy czy nieruchomość położona jest w obszarze
-                rewitalizacji ; Specjalnej Strefy Rewitalizacji (jeśli tak to i o jej pierwokupie);</label>
-            <div
-            class="input-wrap">
-                <input class="input-number" type="number" min="0">
-                <input class="input-number" type="number" min="0">
-        </div>
-        </div>
-        <div class="document-el type-1">
-            <label class="grayed">Umowa kredytowa zawarta z bankiem z oświadczeniami;</label>
-            <div class="input-wrap">
-                <input class="input-number" type="number" min="0">
-                <input class="input-number" type="number" min="0">
-            </div>
-        </div>
-        <div class="document-el type-1">
-            <label class="grayed">Zaświadczenie z banku o wysokości zadłużenia (nieruchomość obciążona kredytem);</label>
-            <div
-            class="input-wrap">
-                <input class="input-number" type="number" min="0">
-                <input class="input-number" type="number" min="0">
-        </div>
-        </div>
-        <div class="document-el type-1">
-            <label class="grayed">Zgoda banku na wykreślenie hipotek (kredyt spłacony);</label>
-            <div class="input-wrap">
-                <input class="input-number" type="number" min="0">
-                <input class="input-number" type="number" min="0">
-            </div>
-        </div>
-        <div class="document-el type-1">
-            <label class="grayed">Zaświadczenie o zameldowaniu na pobyt stały</label>
-            <div class="input-wrap">
-                <input class="input-number" type="number" min="0">
-                <input class="input-number" type="number" min="0">
-            </div>
-        </div>
-        <div class="document-el type-1">
-            <label class="grayed">Odpis skrócony aktu małżeństwa</label>
-            <div class="input-wrap">
-                <input class="input-number" type="number" min="0">
-                <input class="input-number" type="number" min="0">
-            </div>
-        </div>
-        <div class="document-el type-1">
-            <label class="grayed">Odpis skrócony aktu urodzenia</label>
-            <div class="input-wrap">
-                <input class="input-number" type="number" min="0">
-                <input class="input-number" type="number" min="0">
-            </div>
-        </div>
-        <div class="document-el type-1">
-            <label class="grayed">Odpis skrócony aktu zgonu</label>
-            <div class="input-wrap">
-                <input class="input-number" type="number" min="0">
-                <input class="input-number" type="number" min="0">
-            </div>
-        </div>
-        <div class="document-el type-1">
-            <label class="grayed">Dane osobowe z dokumentu tożsamości: imiona, nazwiska, imiona rodziców,
-                adres stałego zamieszkania z kodem pocztowym,
-                <br>nr i termin ważności dowodu osobistego, PESEL;</label>
-            <div class="input-wrap">
-                <input class="input-number" type="number" min="0">
-                <input class="input-number" type="number" min="0">
-            </div>
-        </div>
-        <div class="document-el type-1">
-            <label class="grayed">Stan cywilny i ustrój majątkowy z daty nabycia i zbycia każdej ze stron
-                umowy,</label>
-            <div class="input-wrap">
-                <input class="input-number" type="number" min="0">
-                <input class="input-number" type="number" min="0">
-            </div>
-        </div>
-        <div class="document-el type-1">
-            <label class="grayed">Tel. kontaktowy do drugiej strony czynności (jeśli dotyczy)</label>
-            <div
-            class="input-wrap">
-                <input class="input-number" type="number" min="0">
-                <input class="input-number" type="number" min="0">
-        </div>
-        </div>
-        <div class="document-el type-1">
-            <label class="grayed">Wartość nieruchomości/Cena</label>
-            <div class="input-wrap">
-                <input class="input-number" type="number" min="0">
-                <input class="input-number" type="number" min="0">
-            </div>
-        </div>
-        <div class="document-el type-1">
-            <label class="grayed">Zaświadczenie z biura meldunkowego o braku osób zameldowanych (jeśli chcą
-                nabywcy).</label>
-            <div class="input-wrap">
-                <input class="input-number" type="number" min="0">
-                <input class="input-number" type="number" min="0">
-            </div>
-        </div>
-        </div>
-        <div class="form-input form-list documents"> <span class="label-span big">Dokumenty do uzupełnienia</span>
+        <div
+        class="form-input form-list documents"> <span class="label-span big">Dokumenty do uzupełnienia</span>
 
             <div class="list"> <span>1.</span>
 
@@ -530,23 +494,24 @@
 
                 <input type="text">
             </div>
-        </div>
-        <div class="form-input other-doc">
-            <label>Dodatkowe dokumenty do sporządzenia</label>
-            <textarea rows="5"></textarea>
-        </div>
-        <div class="form-input comments">
-            <label>Uwagi</label>
-            <textarea rows="15"></textarea>
-        </div>
-        <div class="form-input">
-            <label>Osoba zajmująca się zadaniem</label>
-            <input type="text">
-        </div>
-        </form>
-        </div>
-        <script src="./dist/assets/js/libs/jquery.js"></script>
-        <script src="./dist/assets/js/common.js"></script>
+            </div>
+            <div class="form-input other-doc">
+                <label>Dodatkowe dokumenty do sporządzenia</label>
+                <textarea rows="5"></textarea>
+            </div>
+            <div class="form-input comments">
+                <label>Uwagi</label>
+                <textarea rows="15"></textarea>
+            </div>
+            <div class="form-input">
+                <label>Osoba zajmująca się zadaniem</label>
+                <input type="text">
+            </div>
+            </form>
+            </div>
+            <script src="./dist/assets/js/libs/jquery.js"></script>
+            <script src="./dist/assets/js/common.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     </body>
 
 </html>
