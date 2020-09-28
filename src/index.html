@@ -26,6 +26,14 @@
             <input type="text">
         </div>
 
+        <div class="form-input">
+            <label>Data i godzina czynności (jeśli ustalone)</label>
+            <div class="dir-row">
+                <input class="form-control date-input" type="text" placeholder="dd.mm.rrrr">
+                <input class="form-control hour-input" type="text" placeholder="hh:mm">
+            </div>
+        </div>
+
         <partial src="_firstSelect.html"></partial>
 
         <div class="form-input other">
@@ -54,11 +62,34 @@
 
         <partial src="_price.html"></partial>
 
+        <div class="form-input column if-przeniesienie">
+            <label>Numer aktu umowy warunkowej + informacja, co się zmieniło<br>
+                - jeśli dotyczy
+            </label>
+            <input type="number" name="numeraktuwar" min="0" placeholder="numer"><br>
+            <textarea rows="5" placeholder="co się zmieniło w stosunku do warunkowej"></textarea>
+        </div>
+
+        <partial src="_pierwokupsprzedazwar.html"></partial>
+
         <partial src="_payment.html"></partial>
+
+        <div class="form-input if-sprzedazwar">
+            <label>W jakim terminie po odpowiedziach uprawnionych z pierwokupu strony zobowiązują się zawrzeć umowę przeniesienia?
+            </label>
+            <input type="text">
+        </div>
+
+        <div class="form-input if-sprzedazprzed">
+            <label>Termin zawarcia umowy przyrzeczonej - opisz czy data "na sztywno" czy X dni od dnia ziszczenia się warunku/warunków
+            </label>
+            <textarea rows="4"></textarea>
+        </div>
 
         <div class="form-input nomargin if-6">
             <div class="form-input changeform">
                 <label class="sposob changelabel" for="sposob">Sposób wydania</label>
+                <label class="if-przeniesienie accent">Nie wypełniaj jeśli przeniesienie po warunkowej</label>
                 <input type="text" id="sposob" class="changeinput" name="sposob">
             </div>
             <div class="form-input row">
@@ -82,6 +113,16 @@
 
         <partial src="_ukur.html"></partial>
 
+        <div class="question column if-sprzedazprzed">
+            <span class="label-span">Przyrzeczona będzie z pierwokupem lub prawem nabycia</span>
+            <div class="question">
+                <input type="radio" id="przyrzeczona" name="przyrzeczona" value="przyrzeczona">
+                <label class="smaller" for="przyrzeczona">Tak</label>
+                <input type="radio" id="nieprzyrzeczona" name="przyrzeczona" value="nieprzyrzeczona">
+                <label class="smaller" for="nieprzyrzeczona">Nie</label>
+            </div>
+        </div>
+
         <partial src="_tax.html"></partial>
 
         <div class="question column if-charge">
@@ -104,8 +145,22 @@
         </div>
 
         <div class="form-input comments">
-            <label>Uwagi</label>
+            <label>Pozostałe informacje dotyczące czynności, uwagi <br>
+                (wpisz jak najwięcej informacji)</label>
             <textarea rows="15"></textarea>
+        </div>
+
+        <div class="form-input numeraktu if-akt">
+            <label>Numer sprawy aktu, z którym będzie to w jednym akcie<br>
+                - jeśli dotyczy
+            </label>
+            <input type="number" name="numeraktu" min="0">
+        </div>
+
+        <div class="form-input numerczynnosci">
+            <label>Numer czynności powiązanej - jeśli dotyczy
+            </label>
+            <input type="number" name="numeraktu" min="0">
         </div>
 
         <div class="form-input">

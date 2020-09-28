@@ -7,8 +7,11 @@ $aux: rgba(212, 189, 78, 0.9);
 $aux-darker:		darken($aux, 20%);
 $aux-dark: 			darken($aux, 35%);
 $aux-light: 		lighten($aux, 10%);
-$text: 				#000000;
-$accent: rgba(63, 172, 135, 0.67);
+
+$accent: 			rgba(130, 180, 139, 0.8);
+$accent-light: 		rgba(130, 180, 139, 0.4);
+$accent-dark: 		rgb(130, 180, 139);
+$accent-vivid: 		rgba(171, 233, 187, 0.8);
 
 $desktop-width: 400px;
 

@@ -49,6 +49,13 @@
                     <label>Numer telefonu do klienta</label>
                     <input type="text">
                 </div>
+                <div class="form-input">
+                    <label>Data i godzina czynności (jeśli ustalone)</label>
+                    <div class="dir-row">
+                        <input class="form-control date-input" type="text" placeholder="dd.mm.rrrr">
+                        <input class="form-control hour-input" type="text" placeholder="hh:mm">
+                    </div>
+                </div>
                 <div class="form-input if-akt">
                     <label>Typ aktu</label>
                     <select class="form-control selectpicker" id="select-type"
@@ -57,11 +64,11 @@
                         <option value="yes" data-price="yes" data-credit="yes"
                         data-duty="yes" data-ukur="yes" data-tax="yes" data-charge="yes" data-sale="yes">Sprzedaż</option>
                         <option value="yes" data-price="yes" data-credit="yes"
-                        data-duty="yes" data-ukur="yes" data-tax="yes" data-charge="yes">Przedwstępna sprzedaż</option>
+                        data-duty="yes" data-ukur="yes" data-tax="yes" data-charge="yes" data-sprzedazprzed="yes">Przedwstępna sprzedaż</option>
                         <option value="yes" data-price="yes" data-credit="yes"
-                        data-duty="yes" data-ukur="yes" data-tax="yes" data-charge="yes">Warunkowa sprzedaż</option>
+                        data-duty="yes" data-ukur="yes" data-tax="yes" data-charge="yes" data-sprzedazwar="yes">Warunkowa sprzedaż</option>
                         <option value="yes" data-price="yes" data-credit="yes"
-                        data-duty="yes" data-ukur="no" data-tax="yes" data-charge="yes">Przeniesienie własności</option>
+                        data-duty="yes" data-ukur="yes" data-tax="yes" data-charge="yes" data-przeniesienie="yes">Przeniesienie własności</option>
                         <option value="yes" data-price="value"
                         data-duty="yes" data-ukur="yes" data-othertax="yes">Darowizna</option>
                         <option value="yes" data-price="yes" data-duty="yes"
@@ -148,6 +155,57 @@
                         <label class="nomargin" for="wartoscnieznana">Wartość nieznana</label>
                     </div>
                 </div>
+                <div class="form-input column if-przeniesienie">
+                    <label>Numer aktu umowy warunkowej + informacja, co się zmieniło
+                        <br>- jeśli dotyczy</label>
+                    <input type="number" name="numeraktuwar" min="0"
+                    placeholder="numer">
+                    <br>
+                    <textarea rows="5" placeholder="co się zmieniło w stosunku do warunkowej"></textarea>
+                </div>
+                <div class="form-input if-sprzedazwar checklist">
+                    <label>Komu przysługuje pierwokup</label>
+                    <div class="form-input row">
+                        <input class="checkbox-input" type="checkbox" id="kowr" name="pierwokup"
+                        value="kowr">
+                        <label class="nomargin" for="kowr">KOWR</label>
+                    </div>
+                    <div class="form-input row">
+                        <input class="checkbox-input" type="checkbox" id="lasy" name="pierwokup"
+                        value="lasy">
+                        <label class="nomargin" for="lasy">Lasy</label>
+                    </div>
+                    <div class="form-input row">
+                        <input class="checkbox-input" type="checkbox" id="gmina" name="pierwokup"
+                        value="gmina">
+                        <label class="nomargin" for="gmina">Gmina</label>
+                    </div>
+                    <div class="form-input row">
+                        <input class="checkbox-input" type="checkbox" id="strefa" name="pierwokup"
+                        value="strefa">
+                        <label class="nomargin" for="strefa">Specjalna Strefa Ekonomiczna</label>
+                    </div>
+                    <div class="form-input row">
+                        <input class="checkbox-input" type="checkbox" id="zasob" name="pierwokup"
+                        value="zasob">
+                        <label class="nomargin" for="zasob">Krajowy Zasób Nieruchomości</label>
+                    </div>
+                    <div class="form-input row">
+                        <input class="checkbox-input" type="checkbox" id="wody" name="pierwokup"
+                        value="wody">
+                        <label class="nomargin" for="wody">Wody - SP</label>
+                    </div>
+                    <div class="form-input row">
+                        <input class="checkbox-input" type="checkbox" id="wspolwlasciciel" name="pierwokup"
+                        value="wspolwlasciciel">
+                        <label class="nomargin" for="wspolwlasciciel">Współwłaściciel / współuprawniony</label>
+                    </div>
+                    <div class="form-input row">
+                        <input class="checkbox-input" type="checkbox" id="sprzedazwarinne" name="Inne"
+                        value="sprzedazwarinne">
+                        <label class="nomargin" for="sprzedazwarinne">Inne</label>
+                    </div>
+                </div>
                 <!--<div class="question if-withprice">-->
                 <!-- <span class="label-span">Płatność przelewem (w tym częściowa):</span>-->
                 <!-- <input type="radio" id="przelew" name="platnosc" value="przelew">-->
@@ -175,8 +233,8 @@
                     <!-- <input class="form-control date-input" type="text" placeholder="dd.mm.rrrr
                     lub opisowo">-->
                     <!-- </div>-->
-                    <div class="divider"></div>
                     <div class="form-input other-doc">
+                        <label class="if-przeniesienie accent">Nie wypełniaj jeśli identycznie jak w warunkowej</label>
                         <label>Wysokość i termin transzy 1, na czyją rzecz</label>
                         <textarea rows="5"></textarea>
                     </div>
@@ -226,11 +284,11 @@
                         <label class="small" for="gotowka2">Nie</label>
                     </div>
                     <div class="form-input account">
-                        <label for="numer">Numer konta</label>
+                        <label for="numer2">Numer konta</label>
                         <input type="number" id="numer2" name="numer" min="0">
                     </div>
                     <div class="form-input account">
-                        <label for="numer">Posiadacz konta</label>
+                        <label for="posiadacz2">Posiadacz konta</label>
                         <input type="text" id="posiadacz2" name="posiadacz">
                     </div>
                     <button type="button" class="btn-class add-next" data-next="next-2">Dodaj kolejną transzę</button>
@@ -256,17 +314,17 @@
 
                         <input type="radio"
                         class="przelew" id="przelew3" name="platnosc3" value="przelew">
-                        <label class="small" for="przelew2">Tak</label>
+                        <label class="small" for="przelew3">Tak</label>
                         <input type="radio" class="gotowka" id="gotowka3" name="platnosc3"
                         value="gotowka">
-                        <label class="small" for="gotowka2">Nie</label>
+                        <label class="small" for="gotowka3">Nie</label>
                     </div>
                     <div class="form-input account">
-                        <label for="numer">Numer konta</label>
+                        <label for="numer3">Numer konta</label>
                         <input type="number" id="numer3" name="numer" min="0">
                     </div>
                     <div class="form-input account">
-                        <label for="numer">Posiadacz konta</label>
+                        <label for="posiadacz3">Posiadacz konta</label>
                         <input type="text" id="posiadacz3" name="posiadacz">
                     </div>
                     <button type="button" class="btn-class add-next" data-next="next-3">Dodaj kolejną transzę</button>
@@ -292,17 +350,17 @@
 
                         <input type="radio"
                         class="przelew" id="przelew4" name="platnosc4" value="przelew">
-                        <label class="small" for="przelew2">Tak</label>
+                        <label class="small" for="przelew4">Tak</label>
                         <input type="radio" class="gotowka" id="gotowka4" name="platnosc4"
                         value="gotowka">
-                        <label class="small" for="gotowka2">Nie</label>
+                        <label class="small" for="gotowka4">Nie</label>
                     </div>
                     <div class="form-input account">
-                        <label for="numer">Numer konta</label>
+                        <label for="numer4">Numer konta</label>
                         <input type="number" id="numer4" name="numer" min="0">
                     </div>
                     <div class="form-input account">
-                        <label for="numer">Posiadacz konta</label>
+                        <label for="posiadacz4">Posiadacz konta</label>
                         <input type="text" id="posiadacz4" name="posiadacz">
                     </div>
                     <button type="button" class="btn-class add-next" data-next="next-4">Dodaj kolejną transzę</button>
@@ -328,27 +386,26 @@
 
                         <input type="radio"
                         class="przelew" id="przelew5" name="platnosc5" value="przelew">
-                        <label class="small" for="przelew2">Tak</label>
+                        <label class="small" for="przelew5">Tak</label>
                         <input type="radio" class="gotowka" id="gotowka5" name="platnosc5"
                         value="gotowka">
-                        <label class="small" for="gotowka2">Nie</label>
+                        <label class="small" for="gotowka5">Nie</label>
                     </div>
                     <div class="form-input account">
-                        <label for="numer">Numer konta</label>
+                        <label for="numer5">Numer konta</label>
                         <input type="number" id="numer5" name="numer" min="0">
                     </div>
                     <div class="form-input account">
-                        <label for="numer">Posiadacz konta</label>
+                        <label for="posiadacz5">Posiadacz konta</label>
                         <input type="text" id="posiadacz5" name="posiadacz">
                     </div>
                     <button type="button" class="btn-class add-next-final">Dodaj kolejną transzę</button>
                 </div>
                 <div class="nextDiv next-final">
                     <div class="form-input">
-                        <label>Wysokość i termin transzy, na czyją rzecz, sposób płatności,
-                            <br>(w przypadku przelewu: numer konta, posiadacz konta)</label>
-                        <textarea
-                        rows="6"></textarea>
+                        <label>Wysokość i termin pozostałych transz, na czyją rzecz, sposób płatności,
+                            (w przypadku przelewu: numer konta, posiadacz konta)</label>
+                        <textarea rows="6"></textarea>
                     </div>
                 </div>
                 <div class="question if-withcredit"> <span class="label-span">Kredyt</span>
@@ -361,11 +418,22 @@
                     <input type="radio" id="niewiadomo" name="kredyt" value="niewiadomo">
                     <label class="small" for="niewiadomo">Nie wiadomo</label>
                 </div>
+                <div class="form-input if-sprzedazwar">
+                    <label>W jakim terminie po odpowiedziach uprawnionych z pierwokupu strony zobowiązują
+                        się zawrzeć umowę przeniesienia?</label>
+                    <input type="text">
+                </div>
+                <div class="form-input if-sprzedazprzed">
+                    <label>Termin zawarcia umowy przyrzeczonej - opisz czy data "na sztywno" czy
+                        X dni od dnia ziszczenia się warunku/warunków</label>
+                    <textarea rows="4"></textarea>
+                </div>
                 <div class="form-input nomargin if-6">
                     <div class="form-input changeform">
                         <label class="sposob changelabel" for="sposob">Sposób wydania</label>
-                        <input type="text" id="sposob" class="changeinput"
-                        name="sposob">
+                        <label class="if-przeniesienie accent">Nie wypełniaj jeśli przeniesienie po warunkowej</label>
+                        <input type="text"
+                        id="sposob" class="changeinput" name="sposob">
                     </div>
                     <div class="form-input row">
                         <input class="checkbox-input" type="checkbox" id="sposobnieznany" name="sposobnieznany"
@@ -373,21 +441,23 @@
                         <label class="nomargin" for="sposobnieznany">Nieznany sposób wydania</label>
                     </div>
                 </div>
-                <div class="question if-withprice"> <span class="label-span">Ustanowienie hipoteki</span>
+                <div class="question column if-withprice"> <span class="label-span">Ustanowienie hipoteki</span>
 
-                    <input type="radio"
-                    id="takhipoteka" name="hipoteka" value="tak">
-                    <label class="smaller" for="takhipoteka">Tak</label>
-                    <input type="radio" id="niehipoteka" name="hipoteka" value="nie">
-                    <label class="smaller" for="niehipoteka">Nie</label>
-                    <input type="radio" id="niedotyczyhipoteka" name="hipoteka"
-                    value="niedotyczy">
-                    <label class="small" for="niedotyczyhipoteka">Nie dotyczy</label>
+                    <div class="question">
+                        <input type="radio" id="takhipoteka" name="hipoteka" value="tak">
+                        <label class="smaller" for="takhipoteka">Tak</label>
+                        <input type="radio" id="niehipoteka" name="hipoteka" value="nie">
+                        <label class="smaller" for="niehipoteka">Nie</label>
+                        <input type="radio" id="niedotyczyhipoteka" name="hipoteka"
+                        value="niedotyczy">
+                        <label class="small" for="niedotyczyhipoteka">Nie dotyczy</label>
+                    </div>
                 </div>
-                <div class="question if-withprice"> <span class="label-span">Roszczenie o przeniesienie hipoteki</span>
+                <div class="question column if-withprice"> <span class="label-span">Roszczenie o przeniesienie hipoteki</span>
 
-                    <input
-                    type="radio" id="takprzeniesienie" name="przeniesienie" value="tak">
+                    <div
+                    class="question">
+                        <input type="radio" id="takprzeniesienie" name="przeniesienie" value="tak">
                         <label class="smaller" for="takprzeniesienie">Tak</label>
                         <input type="radio" id="nieprzeniesienie" name="przeniesienie"
                         value="nie">
@@ -396,15 +466,16 @@
                         value="niedotyczyprzeniesienie">
                         <label class="small" for="niedotyczyprzeniesienie">Nie dotyczy</label>
                 </div>
-                <div class="question column if-6"> <span class="label-span">Sprawdzono pierwokupy i prawa nabycia za równowartość (również podstawę nabycia)</span>
+        </div>
+        <div class="question column if-6"> <span class="label-span">Sprawdzono pierwokupy i prawa nabycia za równowartość (również podstawę nabycia)</span>
 
-                    <div
-                    class="question">
-                        <input type="radio" id="sprawdzono" name="pierwokupy" value="tak">
-                        <label class="smaller" for="sprawdzono">Tak</label>
-                        <input type="radio" id="niesprawdzono" name="pierwokupy" value="nie">
-                        <label class="smaller" for="niesprawdzono">Nie</label>
-                </div>
+            <div
+            class="question">
+                <input type="radio" id="sprawdzono" name="pierwokupy" value="tak">
+                <label class="smaller" for="sprawdzono">Tak</label>
+                <input type="radio" id="niesprawdzono" name="pierwokupy" value="nie">
+                <label class="smaller" for="niesprawdzono">Nie</label>
+        </div>
         </div>
         <div class="question column ukur"> <span class="label-span">Wymóg zgody na zbycie UKUR</span>
 
@@ -413,17 +484,36 @@
                 <label class="smaller" for="wymog">Tak</label>
                 <input type="radio" id="brakwymogu" name="wymog" value="brakwymogu">
                 <label class="smaller" for="brakwymogu">Nie</label>
+                <input type="radio" id="niedotyczywymogu" name="wymog" value="niedotyczywymogu">
+                <label class="smaller" for="niedotyczywymogu">Nie dotyczy</label>
             </div>
         </div>
-        <div class="question column ukur"> <span class="label-span">Wymóg zgody na nabycie UKUR</span>
+        <div class="question column ukur"> <span class="label-span">Wymóg zgody na nabycie UKUR, MSWiA</span>
 
-            <div class="question">
+            <div
+            class="question">
                 <input type="radio" id="wymognabycie" name="wymognabycie" value="wymognabycie">
                 <label class="smaller" for="wymognabycie">Tak</label>
                 <input type="radio" id="brakwymogunabycie" name="wymognabycie"
                 value="brakwymogunabycie">
                 <label class="smaller" for="brakwymogunabycie">Nie</label>
-            </div>
+                <input type="radio" id="niedotyczywymogunabycie" name="wymognabycie"
+                value="brakwymogunabycie">
+                <label class="smaller" for="niedotyczywymogunabycie">Nie dotyczy</label>
+        </div>
+        </div>
+        <div class="question column if-przeniesienieukur"> <span class="label-span accent">UKUR, lasy - prawo nabycia za zapłatą równowartości pieniężnej</span>
+
+            <div
+            class="question">
+                <input type="radio" id="ukurlasytak" name="ukurlasy" value="ukurlasytak">
+                <label class="smaller" for="ukurlasytak">Tak</label>
+                <input type="radio" id="ukurlasynie" name="ukurlasy" value="ukurlasynie">
+                <label class="smaller" for="ukurlasynie">Nie</label>
+                <input type="radio" id="ukurlasyniedotyczy" name="ukurlasy"
+                value="ukurlasyniedotyczy">
+                <label class="smaller" for="ukurlasyniedotyczy">Nie dotyczy</label>
+        </div>
         </div>
         <div class="question column ukur"> <span class="label-span">Obowiązek z art. 2b UKUR</span>
 
@@ -432,7 +522,21 @@
                 <label class="smaller" for="obowiazek">Tak</label>
                 <input type="radio" id="brakobowiazku" name="obowiazek" value="brakobowiazku">
                 <label class="smaller" for="brakobowiazku">Nie</label>
+                <input type="radio" id="niedotyczyobowiazek" name="obowiazek"
+                value="niedotyczyobowiazek">
+                <label class="smaller" for="niedotyczyobowiazek">Nie dotyczy</label>
             </div>
+        </div>
+        <div class="question column if-sprzedazprzed"> <span class="label-span">Przyrzeczona będzie z pierwokupem lub prawem nabycia</span>
+
+            <div
+            class="question">
+                <input type="radio" id="przyrzeczona" name="przyrzeczona" value="przyrzeczona">
+                <label class="smaller" for="przyrzeczona">Tak</label>
+                <input type="radio" id="nieprzyrzeczona" name="przyrzeczona"
+                value="nieprzyrzeczona">
+                <label class="smaller" for="nieprzyrzeczona">Nie</label>
+        </div>
         </div>
         <div class="question column if-tax"> <span class="label-span">Podatek dochodowy</span>
 
@@ -500,8 +604,19 @@
                 <textarea rows="5"></textarea>
             </div>
             <div class="form-input comments">
-                <label>Uwagi</label>
+                <label>Pozostałe informacje dotyczące czynności, uwagi
+                    <br>(wpisz jak najwięcej informacji)</label>
                 <textarea rows="15"></textarea>
+            </div>
+            <div class="form-input numeraktu if-akt">
+                <label>Numer sprawy aktu, z którym będzie to w jednym akcie
+                    <br>- jeśli dotyczy</label>
+                <input type="number" name="numeraktu" min="0">
+            </div>
+            <div class="form-input numerczynnosci">
+                <label>Numer czynności powiązanej - jeśli dotyczy</label>
+                <input type="number"
+                name="numeraktu" min="0">
             </div>
             <div class="form-input">
                 <label>Osoba zajmująca się zadaniem</label>

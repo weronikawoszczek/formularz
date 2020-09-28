@@ -5,9 +5,11 @@ app.common = {
         $('.quest-initial #akt').click(function () {
             $('.if-akt').slideDown();
             $('.documents').slideUp();
+            $('.numerczynnosci').slideUp();
         });
         $('.quest-initial #poswiadczenie').click(function () {
             $('.documents').slideDown();
+            $('.numerczynnosci').slideDown();
             $('.if-akt').slideUp();
             $('.if-przedmiot-caller').slideUp();
             $('.other-object').slideUp();
@@ -23,10 +25,15 @@ app.common = {
             $('.if-othertax').slideUp();
             $('.if-charge').slideUp();
             $('.other-doc').slideUp();
-            $('.comments').slideUp();
+            $('.numeraktu').slideUp();
+            $('.if-sprzedazprzed').slideUp();
+            $('.if-sprzedazwar').slideUp();
+            $('.if-przeniesienie').slideUp();
+
         });
         $('.quest-initial #inne').click(function () {
             $('.documents').slideDown();
+            $('.numerczynnosci').slideDown();
             $('.if-akt').slideUp();
             $('.if-przedmiot-caller').slideUp();
             $('.other-object').slideUp();
@@ -42,7 +49,10 @@ app.common = {
             $('.if-othertax').slideUp();
             $('.if-charge').slideUp();
             $('.other-doc').slideUp();
-            $('.comments').slideUp();
+            $('.numeraktu').slideUp();
+            $('.if-sprzedazprzed').slideUp();
+            $('.if-sprzedazwar').slideUp();
+            $('.if-przeniesienie').slideUp();
         });
 
 
@@ -101,7 +111,14 @@ app.common = {
             else {
                 $('.if-ukur').slideUp();
                 $('.ukur').slideUp();
+            }
 
+            var przeniesienieukur = selected.data('przeniesienie');
+            if (przeniesienieukur == "yes" && ukur=="yes" && $('#ukur').is(":checked")) {
+                $('.if-przeniesienieukur').slideDown();
+            }
+            else {
+                $('.if-przeniesienieukur').slideUp();
             }
 
             var tax = selected.data('tax');
@@ -127,6 +144,33 @@ app.common = {
             else {
                 $('.if-charge').slideUp();
             }
+
+            // --------------------------------------------------------------------------
+
+            var przeniesienie = selected.data('przeniesienie');
+            if (przeniesienie == "yes") {
+                $('.if-przeniesienie').slideDown().css('display', 'flex');
+            }
+            else {
+                $('.if-przeniesienie').slideUp();
+            }
+
+            var sprzedazwar = selected.data('sprzedazwar');
+            if (sprzedazwar == "yes") {
+                $('.if-sprzedazwar').slideDown().css('display', 'flex');
+            }
+            else {
+                $('.if-sprzedazwar').slideUp();
+            }
+
+            var sprzedazprzed = selected.data('sprzedazprzed');
+            if (sprzedazprzed == "yes") {
+                $('.if-sprzedazprzed').slideDown().css('display', 'flex');
+            }
+            else {
+                $('.if-sprzedazprzed').slideUp();
+            }
+
         });
 
         $("#selectobject").change(function () {
@@ -152,12 +196,20 @@ app.common = {
 
             var selected = $("#select-type").find(':selected');
             var ukur = selected.data('ukur');
+            var ifprzeniesienie = selected.data('przeniesienie');
 
             if(this.checked && ukur == "yes") {
                 $('.ukur').slideDown().css('display', 'flex');
             }
             else {
                 $('.ukur').slideUp();
+            }
+
+            if(this.checked && ukur == "yes" && ifprzeniesienie == "yes") {
+                $('.if-przeniesienieukur').slideDown().css('display', 'flex');
+            }
+            else {
+                $('.if-przeniesienieukur').slideUp();
             }
         });
 

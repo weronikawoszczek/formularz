@@ -1,7 +1,7 @@
 body {
   font-size: $baseSize+px;
   font-family: $font-secondary;
-  color: $text;
+  color: $main;
   line-height: 140%;
   background: url(../img/bgbg.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -145,10 +145,14 @@ form {
     padding: 5px 12px;
     min-width: 105px;
     text-align: center;
-    color: $main;
     font-weight: bold;
     font-family: $font-main;
     box-shadow: 5px 5px 40px -15px #000000;
+
+    &.accent {
+      color: $accent;
+      text-shadow: .5px .5px .5px $accent;
+    }
 
     &.small {
       padding: 3px 6px;
@@ -186,11 +190,15 @@ form {
 }
 
 .label-span {
-  color: $main;
   font-size: 14px;
   margin: 0 10px 0 0;
   width: 110px;
   text-align: left;
+
+  &.accent {
+    color: $accent;
+    text-shadow: .5px .5px .5px $accent;
+  }
 
   &.big{
     width: $desktop-width;
@@ -224,12 +232,16 @@ form {
   }
 
   label {
-    color: $main;
     font-size: 14px;
     margin-bottom: 5px;
 
     &.nomargin {
       margin: 0;
+    }
+
+    &.accent {
+      color: $accent;
+      text-shadow: .5px .5px .5px $accent;
     }
   }
 
@@ -247,7 +259,11 @@ form {
     height: 36px;
     padding: 8px;
     font-size: 16px;
-    color: $main--dark
+    color: $main--dark;
+    &::placeholder{
+      color: #9b9b9b;
+      font-size: 14px;
+    }
   }
 
   textarea {
@@ -259,19 +275,28 @@ form {
     font-size: 16px;
     color: $main--dark;
     resize: none;
+    &::placeholder{
+      color: #9b9b9b;
+      font-size: 14px
+    }
   }
 
   .checkbox-input {
     width: 20px;
     margin: 0 10px 0 0;
-    margin: 0 10px 0 0;
+  }
+
+  .dir-row{
+    display: flex;
   }
 
   .date-input{
-    width: 200px;
-    &::placeholder{
-      color: #9b9b9b;
-    }
+    width: 140px;
+    margin-right: 10px;
+  }
+
+  .hour-input{
+    width: 80px;
   }
 
   .changeinput {
@@ -284,7 +309,6 @@ form {
 .nextDiv{
   flex-direction: column;
   margin-bottom: 30px;
-  //border: 1px solid $aux;
   padding: 30px 20px;
   box-shadow: 5px 5px 20px -5px $main--light-darker;
 
@@ -306,7 +330,7 @@ form {
   }
 }
 
-.if-akt, .other, .if-przedmiot-caller, .other-object, .if-withprice, .if-withvalue, .account, .date, .if-withcredit, .if-6, .if-ukur, .ukur, .if-tax, .if-othertax, .if-charge, .nextDiv, .documents {
+.if-akt, .other, .if-przedmiot-caller, .other-object, .if-withprice, .if-withvalue, .account, .date, .if-withcredit, .if-6, .if-ukur, .ukur, .if-tax, .if-othertax, .if-charge, .nextDiv, .documents, .numeraktu, .numerczynnosci, .if-przeniesienie, .if-przeniesienieukur, .if-sprzedazwar, .if-sprzedazprzed{
   display: none;
 }
 
@@ -370,7 +394,6 @@ form {
 
   span{
     font-size: 14px;
-    color: $main;
   }
 
   input {
@@ -439,5 +462,19 @@ form {
 
   .document-el{
     display: flex;
+  }
+}
+
+.if-sprzedazwar{
+  &.checklist {
+    margin-bottom: 20px;
+
+    label {
+      color: $accent-dark;
+    }
+
+    .form-input.row {
+      margin-bottom: 0px;
+    }
   }
 }
