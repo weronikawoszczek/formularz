@@ -26,6 +26,7 @@ app.common = {
             $('.if-charge').slideUp();
             $('.other-doc').slideUp();
             $('.numeraktu').slideUp();
+            $('.if-cudzoziemiec').slideUp();
             $('.if-sprzedazprzed').slideUp();
             $('.if-sprzedazwar').slideUp();
             $('.if-przeniesienie').slideUp();
@@ -57,6 +58,7 @@ app.common = {
             $('.if-charge').slideUp();
             $('.other-doc').slideUp();
             $('.numeraktu').slideUp();
+            $('.if-cudzoziemiec').slideUp();
             $('.if-sprzedazprzed').slideUp();
             $('.if-sprzedazwar').slideUp();
             $('.if-przeniesienie').slideUp();
@@ -164,6 +166,14 @@ app.common = {
             // --------------------------------------------------------------------------
             // --------------------------------------------------------------------------
             // --------------------------------------------------------------------------
+
+            var cudzoziemiec = selected.data('cudzoziemiec');
+            if (cudzoziemiec == "yes") {
+                $('.if-cudzoziemiec').slideDown().css('display', 'flex');
+            }
+            else {
+                $('.if-cudzoziemiec').slideUp();
+            }
 
             var przeniesienie = selected.data('przeniesienie');
             if (przeniesienie == "yes") {

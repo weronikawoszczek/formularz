@@ -62,14 +62,15 @@
                     data-live-search="true">
                         <option selected disabled value="no">Wybierz</option>
                         <option value="yes" data-price="yes" data-credit="yes"
-                        data-duty="yes" data-ukur="yes" data-tax="yes" data-charge="yes" data-sale="yes">Sprzedaż</option>
+                        data-duty="yes" data-ukur="yes" data-tax="yes" data-charge="yes" data-sale="yes"
+                        data-cudzoziemiec="yes">Sprzedaż</option>
                         <option value="yes" data-price="yes" data-credit="yes"
                         data-duty="yes" data-ukur="yes" data-tax="yes" data-charge="yes" data-sprzedazprzed="yes">Przedwstępna sprzedaż</option>
                         <option value="yes" data-price="yes" data-credit="yes"
                         data-duty="yes" data-ukur="yes" data-tax="yes" data-charge="yes" data-sprzedazwar="yes">Warunkowa sprzedaż</option>
                         <option value="yes" data-price="yes" data-credit="yes"
                         data-duty="yes" data-ukur="yes" data-tax="yes" data-charge="yes" data-przeniesienie="yes"
-                        data-lasy="yes">Przeniesienie własności</option>
+                        data-lasy="yes" data-cudzoziemiec="yes">Przeniesienie własności</option>
                         <option value="yes" data-price="value"
                         data-duty="yes" data-ukur="yes" data-othertax="yes" data-darowizna="yes"
                         data-lasy="yes">Darowizna</option>
@@ -164,7 +165,7 @@
                 <div class="form-input column if-przeniesienie">
                     <label>Numer aktu umowy warunkowej + informacja, co się zmieniło
                         <br>- jeśli dotyczy</label>
-                    <input type="number" name="numeraktuwar" min="0"
+                    <input type="text" name="numeraktuwar" min="0"
                     placeholder="numer">
                     <br>
                     <textarea rows="5" placeholder="co się zmieniło w stosunku do warunkowej"></textarea>
@@ -424,6 +425,18 @@
                     <input type="radio" id="niewiadomo" name="kredyt" value="niewiadomo">
                     <label class="small" for="niewiadomo">Nie wiadomo</label>
                 </div>
+                <div class="question if-cudzoziemiec"> <span class="label-span">Cudzoziemiec - wypis MSWiA</span>
+
+                    <input type="radio"
+                    id="cudzoziemiectak" name="cudzoziemiec" value="tak">
+                    <label class="smaller" for="cudzoziemiectak">Tak</label>
+                    <input type="radio" id="cudzoziemiecnie" name="cudzoziemiec"
+                    value="nie">
+                    <label class="smaller" for="cudzoziemiecnie">Nie</label>
+                    <input type="radio" id="cudzoziemiecniedotyczy" name="cudzoziemiec"
+                    value="niedotyczy">
+                    <label class="small" for="cudzoziemiecniedotyczy">Nie dotyczy</label>
+                </div>
                 <div class="form-input if-sprzedazwar">
                     <label>W jakim terminie po odpowiedziach uprawnionych z pierwokupu strony zobowiązują
                         się zawrzeć umowę przeniesienia?</label>
@@ -527,7 +540,7 @@
                 <div class="form-input nomargin if-6">
                     <div class="form-input changeform">
                         <label class="sposob changelabel" for="sposob">Sposób wydania</label>
-                        <label class="if-przeniesienie accent">Nie wypełniaj jeśli przeniesienie po warunkowej</label>
+                        <label class="if-przeniesienie accent">Nie wypełniaj jeśli identycznie jak w warunkowej</label>
                         <input type="text"
                         id="sposob" class="changeinput" name="sposob">
                     </div>
@@ -712,12 +725,12 @@
             <div class="form-input numeraktu if-akt">
                 <label>Numer sprawy aktu, z którym będzie to w jednym akcie
                     <br>- jeśli dotyczy</label>
-                <input type="number" name="numeraktu" min="0">
+                <input type="text" name="numeraktu" min="0">
             </div>
             <div class="form-input numerczynnosci">
                 <label>Numer czynności powiązanej - jeśli dotyczy</label>
-                <input type="number"
-                name="numeraktu" min="0">
+                <input type="text" name="numeraktu"
+                min="0">
             </div>
             <div class="form-input">
                 <label for="files2">Dołącz pliki, jeśli uważasz za stosowne</label>
