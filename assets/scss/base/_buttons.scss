@@ -35,5 +35,13 @@
         margin: 15px 0 10px;
         width: 100px;
     }
+
+    &.absolute{
+        position: absolute;
+        min-width: 100px;
+        bottom: 40px;
+        left: auto;
+        right: auto;
+    }
 }
 

@@ -23,7 +23,7 @@
     
     <body>
         <div class="page-limiter">
-            <form>
+            <form id="form">
                  <h3>formularz</h3>
 
                 <div class="question quest-initial space-between">
@@ -68,28 +68,31 @@
                         <option value="yes" data-price="yes" data-credit="yes"
                         data-duty="yes" data-ukur="yes" data-tax="yes" data-charge="yes" data-sprzedazwar="yes">Warunkowa sprzedaż</option>
                         <option value="yes" data-price="yes" data-credit="yes"
-                        data-duty="yes" data-ukur="yes" data-tax="yes" data-charge="yes" data-przeniesienie="yes">Przeniesienie własności</option>
+                        data-duty="yes" data-ukur="yes" data-tax="yes" data-charge="yes" data-przeniesienie="yes"
+                        data-lasy="yes">Przeniesienie własności</option>
                         <option value="yes" data-price="value"
-                        data-duty="yes" data-ukur="yes" data-othertax="yes">Darowizna</option>
+                        data-duty="yes" data-ukur="yes" data-othertax="yes" data-darowizna="yes"
+                        data-lasy="yes">Darowizna</option>
                         <option value="yes" data-price="yes" data-duty="yes"
                         data-ukur="yes" data-tax="yes" data-othertax="yes" data-charge="yes">Dział spadku</option>
                         <option value="yes" data-price="yes" data-duty="yes"
-                        data-ukur="yes" data-tax="yes" data-othertax="yes" data-charge="yes">Dział spadku + zniesienie własności</option>
+                        data-ukur="yes" data-tax="yes" data-othertax="yes" data-charge="yes" data-dzialzniesienie="yes"
+                        data-lasy="yes">Dział spadku + zniesienie własności</option>
                         <option value="yes" data-price="yes"
                         data-duty="yes" data-ukur="yes" data-tax="yes" data-othertax="yes" data-charge="yes">Zniesienie współwłasności</option>
                         <option value="no" data-price="no" data-duty="no"
-                        data-ukur="no">Deweloperska</option>
-                        <option value="no" data-price="no" data-duty="no"
-                        data-ukur="no">Ustanowienie odrębnej własności</option>
+                        data-ukur="no" data-deweloperska="yes">Deweloperska</option>
+                        <option value="no" data-price="no" data-credit="yes"
+                        data-duty="no" data-ukur="no" data-ustanowienie="yes">Ustanowienie odrębnej własności</option>
                         <option value="no" data-price="no"
                         data-duty="no" data-ukur="no">APD</option>
                         <option value="yes" data-price="yes" data-duty="yes" data-ukur="yes">Umowa majątkowa małżeńska</option>
                         <option value="yes" data-price="yes"
                         data-duty="yes" data-ukur="yes" data-tax="yes" data-charge="yes">UMM + podział majątku</option>
                         <option value="yes" data-price="yes" data-duty="yes"
-                        data-ukur="yes" data-tax="yes" data-charge="yes">Podział majątku</option>
-                        <option value="yes" data-price="yes" data-duty="yes"
-                        data-ukur="yes" data-charge="yes">Dożywocie</option>
+                        data-ukur="yes" data-tax="yes" data-charge="yes" data-podzial="yes" data-lasy="yes">Podział majątku</option>
+                        <option value="yes" data-price="value" data-duty="yes"
+                        data-ukur="yes" data-charge="yes" data-dozywocie="yes" data-lasy="yes">Dożywocie</option>
                         <option value="no" data-price="no" data-duty="no">Protokół spółki</option>
                         <option value="no" data-price="no" data-duty="no">Pełnomocnictwo</option>
                         <option value="no" data-price="no" data-duty="no">Odrzucenie spadku</option>
@@ -428,6 +431,72 @@
                         X dni od dnia ziszczenia się warunku/warunków</label>
                     <textarea rows="4"></textarea>
                 </div>
+                <div class="form-input if-darowizna if-dożywocie if-dzialzniesienie">
+                    <label>Opis ustanawianej służebności - jeśli dotyczy</label>
+                    <textarea rows="4"></textarea>
+                </div>
+                <div class="form-input if-darowizna">
+                    <label>Informacja czy zwolnienie ze schedy, czy zwolnienie z art. 4a SD, wysokość
+                        podatku</label>
+                    <textarea rows="4"></textarea>
+                </div>
+                <div class="form-input if-dzialzniesienie if-podzial">
+                    <label>Sposób zapłaty dopłat/spłat - jeśli dotyczy</label>
+                    <textarea rows="4"></textarea>
+                </div>
+                <div class="form-input if-dzialzniesienie">
+                    <label>Wartość nieruchomości, informacja czy zwolnienie z art. 4a SD</label>
+                    <textarea
+                    rows="4"></textarea>
+                </div>
+                <div class="form-input if-podzial">
+                    <label>Opis długów, co do których samodzielnej spłaty zobowiązują się strony
+                        - jeśli dotyczy</label>
+                    <textarea rows="4"></textarea>
+                </div>
+                <div class="question if-ustanowienie"> <span class="label-span">Hipoteka</span>
+
+                    <input type="radio" id="hipotekaustanowienie"
+                    name="hipoteka" value="tak">
+                    <label class="smaller" for="hipotekaustanowienie">Tak</label>
+                    <input type="radio" id="niehipotekaustanowienie" name="hipoteka"
+                    value="nie">
+                    <label class="smaller" for="niehipotekaustanowienie">Nie</label>
+                    <input type="radio" id="niedotyczyhipotekaustanowienie" name="hipoteka"
+                    value="niedotyczy">
+                    <label class="small" for="niedotyczyhipotekaustanowienie">Nie dotyczy</label>
+                </div>
+                <div class="form-input if-deweloperska if-ustanowienie">
+                    <label for="files">Skan karty transakcji od dewelopera (załaduj dokumenty)</label>
+                    <input
+                    class="upload" type="file" id="files" name="filename" multiple>
+                        <!-- <button type="submit" onclick="return false" class="btn-class">zatwierdź</button>-->
+                </div>
+                <div class="form-input if-deweloperska if-ustanowienie">
+                    <label>Numer lokalu, info o miejscach parkingowych i postojowych, komórkach i
+                        inne informacje dotyczące czynności - jeśli nie wynikają z karty transakcji
+                        dewelopera</label>
+                    <textarea rows="4"></textarea>
+                </div>
+                <div class="form-input if-apd">
+                    <label>Dane spadkodawcy i spadkobierców, udziały</label>
+                    <textarea rows="4"></textarea>
+                </div>
+                <div class="question if-apd"> <span class="label-span">Przyjęcie spadku</span>
+
+                    <input type="radio" id="spadek"
+                    name="spadek" value="tak">
+                    <label class="smaller" for="spadek">Tak</label>
+                    <!-- <input type="radio" id="niehipotekaustanowienie" name="hipoteka"
+                    value="nie">-->
+                    <!-- <label class="smaller" for="niehipotekaustanowienie">Nie</label>-->
+                    <input type="radio" id="niespadek" name="spadek" value="niedotyczy">
+                    <label class="small" for="niespadek">Nie dotyczy</label>
+                </div>
+                <div class="form-input if-apd">
+                    <label>Powiaty położenia spadku</label>
+                    <textarea rows="2"></textarea>
+                </div>
                 <div class="form-input nomargin if-6">
                     <div class="form-input changeform">
                         <label class="sposob changelabel" for="sposob">Sposób wydania</label>
@@ -502,7 +571,7 @@
                 <label class="smaller" for="niedotyczywymogunabycie">Nie dotyczy</label>
         </div>
         </div>
-        <div class="question column if-przeniesienieukur"> <span class="label-span accent">UKUR, lasy - prawo nabycia za zapłatą równowartości pieniężnej</span>
+        <div class="question column if-lasy"> <span class="label-span accent">UKUR, lasy - prawo nabycia za zapłatą równowartości pieniężnej</span>
 
             <div
             class="question">
@@ -599,9 +668,14 @@
                 <input type="text">
             </div>
             </div>
-            <div class="form-input other-doc">
-                <label>Dodatkowe dokumenty do sporządzenia</label>
-                <textarea rows="5"></textarea>
+            <!-- <div class="form-input other-doc">-->
+            <!-- <label>Dodatkowe dokumenty do sporządzenia</label>-->
+            <!-- <textarea rows="5"></textarea>-->
+            <!-- </div>-->
+            <div class="form-input comments">
+                <label>Czy klienci chcą dodatkowe dokumenty bez formy notarialnej (wnioski o
+                    przyspieszenie, formularze SD, pełnomocnictwa etc.)</label>
+                <textarea rows="4"></textarea>
             </div>
             <div class="form-input comments">
                 <label>Pozostałe informacje dotyczące czynności, uwagi
@@ -623,6 +697,7 @@
                 <input type="text">
             </div>
             </form>
+            <button class="btn-class absolute" type="submit" form="form" value="Submit">Zapisz</button>
             </div>
             <script src="./dist/assets/js/libs/jquery.js"></script>
             <script src="./dist/assets/js/common.js"></script>

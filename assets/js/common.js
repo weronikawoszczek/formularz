@@ -29,6 +29,12 @@ app.common = {
             $('.if-sprzedazprzed').slideUp();
             $('.if-sprzedazwar').slideUp();
             $('.if-przeniesienie').slideUp();
+            $('.if-darowizna').slideUp();
+            $('.if-dzialzniesienie').slideUp();
+            $('.if-podzial').slideUp();
+            $('.if-deweloperska').slideUp();
+            $('.if-ustanowienie').slideUp();
+            $('.if-apd').slideUp();
 
         });
         $('.quest-initial #inne').click(function () {
@@ -53,6 +59,11 @@ app.common = {
             $('.if-sprzedazprzed').slideUp();
             $('.if-sprzedazwar').slideUp();
             $('.if-przeniesienie').slideUp();
+            $('.if-darowizna').slideUp();
+            $('.if-podzial').slideUp();
+            $('.if-deweloperska').slideUp();
+            $('.if-ustanowienie').slideUp();
+            $('.if-apd').slideUp();
         });
 
 
@@ -113,12 +124,13 @@ app.common = {
                 $('.ukur').slideUp();
             }
 
-            var przeniesienieukur = selected.data('przeniesienie');
-            if (przeniesienieukur == "yes" && ukur=="yes" && $('#ukur').is(":checked")) {
-                $('.if-przeniesienieukur').slideDown();
+            var lasy = selected.data('lasy');
+
+            if (lasy == "yes" && ukur=="yes" && $('#ukur').is(":checked")) {
+                $('.if-lasy').slideDown();
             }
             else {
-                $('.if-przeniesienieukur').slideUp();
+                $('.if-lasy').slideUp();
             }
 
             var tax = selected.data('tax');
@@ -145,6 +157,9 @@ app.common = {
                 $('.if-charge').slideUp();
             }
 
+
+            // --------------------------------------------------------------------------
+            // --------------------------------------------------------------------------
             // --------------------------------------------------------------------------
 
             var przeniesienie = selected.data('przeniesienie');
@@ -169,6 +184,62 @@ app.common = {
             }
             else {
                 $('.if-sprzedazprzed').slideUp();
+            }
+
+            var darowizna = selected.data('darowizna');
+            if (darowizna == "yes") {
+                $('.if-darowizna').slideDown().css('display', 'flex');
+            }
+            else {
+                $('.if-darowizna').slideUp();
+            }
+
+            var dozywocie = selected.data('dozywocie');
+            if (dozywocie == "yes") {
+                $('.if-dozywocie').slideDown().css('display', 'flex');
+            }
+            else {
+                $('.if-dozywocie').slideUp();
+            }
+
+            var dzialzniesienie = selected.data('dzialzniesienie');
+            if (dzialzniesienie == "yes") {
+                $('.if-dzialzniesienie').slideDown().css('display', 'flex');
+            }
+            else {
+                $('.if-dzialzniesienie').slideUp();
+            }
+
+            var podzial = selected.data('podzial');
+            if (podzial == "yes") {
+                $('.if-podzial').slideDown().css('display', 'flex');
+            }
+            else {
+                $('.if-podzial').slideUp();
+            }
+
+            var deweloperska = selected.data('deweloperska');
+            if (deweloperska == "yes") {
+                $('.if-deweloperska').slideDown().css('display', 'flex');
+            }
+            else {
+                $('.if-deweloperska').slideUp();
+            }
+
+            var ustanowienie = selected.data('ustanowienie');
+            if (ustanowienie == "yes") {
+                $('.if-ustanowienie').slideDown().css('display', 'flex');
+            }
+            else {
+                $('.if-ustanowienie').slideUp();
+            }
+
+            var apd = selected.data('apd');
+            if (apd == "yes") {
+                $('.if-apd').slideDown().css('display', 'flex');
+            }
+            else {
+                $('.if-apd').slideUp();
             }
 
         });
@@ -196,7 +267,7 @@ app.common = {
 
             var selected = $("#select-type").find(':selected');
             var ukur = selected.data('ukur');
-            var ifprzeniesienie = selected.data('przeniesienie');
+            var lasy = selected.data('lasy');
 
             if(this.checked && ukur == "yes") {
                 $('.ukur').slideDown().css('display', 'flex');
@@ -205,12 +276,13 @@ app.common = {
                 $('.ukur').slideUp();
             }
 
-            if(this.checked && ukur == "yes" && ifprzeniesienie == "yes") {
-                $('.if-przeniesienieukur').slideDown().css('display', 'flex');
+            if(this.checked && ukur == "yes" && lasy == "yes") {
+                $('.if-lasy').slideDown().css('display', 'flex');
             }
             else {
-                $('.if-przeniesienieukur').slideUp();
+                $('.if-lasy').slideUp();
             }
+
         });
 
         $("#cenanieznana").change(function () {

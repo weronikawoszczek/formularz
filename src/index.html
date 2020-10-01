@@ -3,7 +3,7 @@
 <partial src="_head.html"></partial>
 <body>
 <div class="page-limiter">
-    <form>
+    <form id="form">
         <h3>formularz</h3>
         <div class="question quest-initial space-between">
             <input type="radio" id="akt" name="zadanie" value="akt">
@@ -74,17 +74,7 @@
 
         <partial src="_payment.html"></partial>
 
-        <div class="form-input if-sprzedazwar">
-            <label>W jakim terminie po odpowiedziach uprawnionych z pierwokupu strony zobowiązują się zawrzeć umowę przeniesienia?
-            </label>
-            <input type="text">
-        </div>
-
-        <div class="form-input if-sprzedazprzed">
-            <label>Termin zawarcia umowy przyrzeczonej - opisz czy data "na sztywno" czy X dni od dnia ziszczenia się warunku/warunków
-            </label>
-            <textarea rows="4"></textarea>
-        </div>
+        <partial src="_rozneakty.html"></partial>
 
         <div class="form-input nomargin if-6">
             <div class="form-input changeform">
@@ -139,9 +129,14 @@
 
         <partial src="_documents.html"></partial>
 
-        <div class="form-input other-doc">
-            <label>Dodatkowe dokumenty do sporządzenia</label>
-            <textarea rows="5"></textarea>
+<!--        <div class="form-input other-doc">-->
+<!--            <label>Dodatkowe dokumenty do sporządzenia</label>-->
+<!--            <textarea rows="5"></textarea>-->
+<!--        </div>-->
+
+        <div class="form-input comments">
+            <label>Czy klienci chcą dodatkowe dokumenty bez formy notarialnej (wnioski o przyspieszenie, formularze SD, pełnomocnictwa etc.)</label>
+            <textarea rows="4"></textarea>
         </div>
 
         <div class="form-input comments">
@@ -169,6 +164,9 @@
         </div>
 
     </form>
+
+    <button class="btn-class absolute" type="submit" form="form" value="Submit">Zapisz</button>
+
 </div>
 <partial src="_footer.html"></partial>
 </body>
