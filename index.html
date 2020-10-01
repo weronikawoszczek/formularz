@@ -73,23 +73,26 @@
                         <option value="yes" data-price="value"
                         data-duty="yes" data-ukur="yes" data-othertax="yes" data-darowizna="yes"
                         data-lasy="yes">Darowizna</option>
-                        <option value="yes" data-price="yes" data-duty="yes"
-                        data-ukur="yes" data-tax="yes" data-othertax="yes" data-charge="yes">Dział spadku</option>
-                        <option value="yes" data-price="yes" data-duty="yes"
-                        data-ukur="yes" data-tax="yes" data-othertax="yes" data-charge="yes" data-dzialzniesienie="yes"
-                        data-lasy="yes">Dział spadku + zniesienie własności</option>
-                        <option value="yes" data-price="yes"
-                        data-duty="yes" data-ukur="yes" data-tax="yes" data-othertax="yes" data-charge="yes">Zniesienie współwłasności</option>
-                        <option value="no" data-price="no" data-duty="no"
-                        data-ukur="no" data-deweloperska="yes">Deweloperska</option>
+                        <!-- <option value="yes" data-price="yes" data-duty="yes"
+                        data-ukur="yes" data-tax="yes" data-othertax="yes"-->
+                        <!-- data-charge="yes">Dział spadku-->
+                        <!-- </option>-->
+                        <option value="yes" data-price="value" data-duty="yes" data-ukur="yes"
+                        data-tax="yes" data-othertax="yes" data-charge="yes" data-dzialzniesienie="yes"
+                        data-lasy="yes">Dział spadku / zniesienie współwłasności</option>
+                        <!-- <option value="yes"
+                        data-price="yes" data-duty="yes" data-ukur="yes" data-tax="yes" data-othertax="yes"-->
+                        <!-- data-charge="yes">Zniesienie współwłasności-->
+                        <!-- </option>-->
+                        <option value="no" data-price="no" data-duty="no" data-ukur="no" data-deweloperska="yes">Deweloperska</option>
                         <option value="no" data-price="no" data-credit="yes"
                         data-duty="no" data-ukur="no" data-ustanowienie="yes">Ustanowienie odrębnej własności</option>
                         <option value="no" data-price="no"
-                        data-duty="no" data-ukur="no">APD</option>
-                        <option value="yes" data-price="yes" data-duty="yes" data-ukur="yes">Umowa majątkowa małżeńska</option>
-                        <option value="yes" data-price="yes"
+                        data-duty="no" data-ukur="no" data-apd="yes">APD</option>
+                        <option value="yes" data-price="no" data-duty="yes" data-ukur="yes">Umowa majątkowa małżeńska</option>
+                        <option value="yes" data-price="value"
                         data-duty="yes" data-ukur="yes" data-tax="yes" data-charge="yes">UMM + podział majątku</option>
-                        <option value="yes" data-price="yes" data-duty="yes"
+                        <option value="yes" data-price="value" data-duty="yes"
                         data-ukur="yes" data-tax="yes" data-charge="yes" data-podzial="yes" data-lasy="yes">Podział majątku</option>
                         <option value="yes" data-price="value" data-duty="yes"
                         data-ukur="yes" data-charge="yes" data-dozywocie="yes" data-lasy="yes">Dożywocie</option>
@@ -502,10 +505,6 @@
                         dewelopera</label>
                     <textarea rows="4"></textarea>
                 </div>
-                <div class="form-input if-apd">
-                    <label>Dane spadkodawcy i spadkobierców, udziały</label>
-                    <textarea rows="4"></textarea>
-                </div>
                 <div class="question if-apd"> <span class="label-span">Przyjęcie spadku</span>
 
                     <input type="radio" id="spadek"
@@ -520,6 +519,10 @@
                 <div class="form-input if-apd">
                     <label>Powiaty położenia spadku</label>
                     <textarea rows="2"></textarea>
+                </div>
+                <div class="form-input if-apd">
+                    <label>Brakujące dokumenty</label>
+                    <textarea rows="3"></textarea>
                 </div>
                 <div class="form-input nomargin if-6">
                     <div class="form-input changeform">
@@ -715,6 +718,12 @@
                 <label>Numer czynności powiązanej - jeśli dotyczy</label>
                 <input type="number"
                 name="numeraktu" min="0">
+            </div>
+            <div class="form-input">
+                <label for="files2">Dołącz pliki, jeśli uważasz za stosowne</label>
+                <input class="upload" type="file"
+                id="files2" name="filename" multiple>
+                <!-- <button type="submit" onclick="return false" class="btn-class">zatwierdź</button>-->
             </div>
             <div class="form-input">
                 <label>Osoba zajmująca się zadaniem</label>
