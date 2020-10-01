@@ -29,6 +29,7 @@ app.common = {
             $('.if-sprzedazprzed').slideUp();
             $('.if-sprzedazwar').slideUp();
             $('.if-przeniesienie').slideUp();
+            $('.if-dozywocie').slideUp();
             $('.if-darowizna').slideUp();
             $('.if-dzialzniesienie').slideUp();
             $('.if-podzial').slideUp();
@@ -59,6 +60,8 @@ app.common = {
             $('.if-sprzedazprzed').slideUp();
             $('.if-sprzedazwar').slideUp();
             $('.if-przeniesienie').slideUp();
+            $('.if-dzialzniesienie').slideUp();
+            $('.if-dozywocie').slideUp();
             $('.if-darowizna').slideUp();
             $('.if-podzial').slideUp();
             $('.if-deweloperska').slideUp();
