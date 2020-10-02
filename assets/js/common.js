@@ -6,6 +6,7 @@ app.common = {
             $('.if-akt').slideDown();
             $('.documents').slideUp();
             $('.numerczynnosci').slideUp();
+            $(".filter-option").text('Wybierz');
         });
         $('.quest-initial #poswiadczenie').click(function () {
             $('.documents').slideDown();
@@ -31,12 +32,13 @@ app.common = {
             $('.if-sprzedazwar').slideUp();
             $('.if-przeniesienie').slideUp();
             $('.if-dozywocie').slideUp();
-            $('.if-darowizna').slideUp();
             $('.if-dzialzniesienie').slideUp();
+            $('.if-darowizna').slideUp();
             $('.if-podzial').slideUp();
-            $('.if-deweloperska').slideUp();
             $('.if-ustanowienie').slideUp();
             $('.if-apd').slideUp();
+            $('.if-sluzebnosc').slideUp();
+            $('.if-skaninne').slideUp();
 
         });
         $('.quest-initial #inne').click(function () {
@@ -62,18 +64,23 @@ app.common = {
             $('.if-sprzedazprzed').slideUp();
             $('.if-sprzedazwar').slideUp();
             $('.if-przeniesienie').slideUp();
-            $('.if-dzialzniesienie').slideUp();
             $('.if-dozywocie').slideUp();
             $('.if-darowizna').slideUp();
             $('.if-podzial').slideUp();
             $('.if-deweloperska').slideUp();
             $('.if-ustanowienie').slideUp();
             $('.if-apd').slideUp();
+            $('.if-sluzebnosc').slideUp();
+            $('.if-skaninne').slideUp();
+            $('.if-dzialzniesienie').slideUp();
         });
 
 
         $("#select-type").change(function () {
             var iscaller = $(this).val();
+
+            // console.log("drugi" + iscaller);
+
 
             if (iscaller == "yes") {
                 $('.other').slideUp();
@@ -199,6 +206,14 @@ app.common = {
                 $('.if-sprzedazprzed').slideUp();
             }
 
+            var sluzebnosc = selected.data('sluzebnosc');
+            if (sluzebnosc == "yes") {
+                $('.if-sluzebnosc').slideDown().css('display', 'flex');
+            }
+            else {
+                $('.if-sluzebnosc').slideUp();
+            }
+
             var darowizna = selected.data('darowizna');
             if (darowizna == "yes") {
                 $('.if-darowizna').slideDown().css('display', 'flex');
@@ -231,12 +246,12 @@ app.common = {
                 $('.if-podzial').slideUp();
             }
 
-            var deweloperska = selected.data('deweloperska');
-            if (deweloperska == "yes") {
-                $('.if-deweloperska').slideDown().css('display', 'flex');
+            var skaninne = selected.data('skaninne');
+            if (skaninne == "yes") {
+                $('.if-skaninne').slideDown().css('display', 'flex');
             }
             else {
-                $('.if-deweloperska').slideUp();
+                $('.if-skaninne').slideUp();
             }
 
             var ustanowienie = selected.data('ustanowienie');
