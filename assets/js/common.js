@@ -350,6 +350,12 @@ app.common = {
             $('.next-final').slideDown().css('display', 'flex');
         });
 
+        $('.btn-delete').click(function () {
+            $(this).parent(".nextDiv").slideUp();
+            $(this).parent(".nextDiv").prev().children('.add-next').slideDown();
+
+        });
+
         $('.przelew').click(function () {
             $(this).parent().siblings('.account').slideDown().css('display', 'flex');
         });
