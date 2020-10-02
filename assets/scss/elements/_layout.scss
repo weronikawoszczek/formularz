@@ -73,6 +73,9 @@ h1 {
 
 h3 {
   @include makeRem(60);
+  @include media-breakpoint-down(sm) {
+    font-size: 3.2rem;
+  }
 }
 
 span {
@@ -103,6 +106,20 @@ form {
   box-shadow: 5px 5px 40px -15px #000000;
   &.login{
     margin-top: 10vh;
+  }
+  @include media-breakpoint-down(sm) {
+    width: 325px;
+  }
+}
+
+.quest-initial{
+  @include media-breakpoint-down(sm) {
+    width: 325px;
+    flex-direction: column;
+    label{
+      width: 200px;
+      margin-bottom: 5px !important;
+    }
   }
 }
 
@@ -211,9 +228,13 @@ form {
 
 .form-input {
   display: flex;
-  width: 400px;
+  width: $desktop-width;
   flex-direction: column;
   margin-bottom: 15px;
+
+  @include media-breakpoint-down(sm) {
+    width: $sm-width;
+  }
 
   &.nomargin {
     margin: 0;
@@ -226,7 +247,7 @@ form {
   &.row {
     flex-direction: row;
     justify-content: flex-start;
-    width: 400px;
+    width: $desktop-width;
     align-items: center;
     margin: 0 0 20px 0;
   }
@@ -268,6 +289,9 @@ form {
       color: #9b9b9b;
       font-size: 14px;
     }
+    @include media-breakpoint-down(sm) {
+      width: $sm-width;
+    }
   }
 
   textarea {
@@ -282,6 +306,9 @@ form {
     &::placeholder{
       color: #9b9b9b;
       font-size: 14px
+    }
+    @include media-breakpoint-down(sm) {
+      width: $sm-width;
     }
   }
 
@@ -345,6 +372,10 @@ form {
   display: flex;
   align-items: center;
   box-shadow: none;
+
+  @include media-breakpoint-down(sm) {
+    width: $sm-width;
+  }
 
   span {
     font-size: 15px;
@@ -463,6 +494,10 @@ form {
   background-color: white;
   margin: 30px auto;
   border-radius: 10px;
+
+  @include media-breakpoint-down(sm) {
+    width: 350px;
+  }
 
   .document-el{
     display: flex;
