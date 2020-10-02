@@ -13,6 +13,7 @@
     cursor: pointer;
     margin: 10px 0 15px;
     font-size: 13px;
+    min-width: 120px;
     &:hover, &:focus, &:active {
         background-color: $aux-light;
     }
